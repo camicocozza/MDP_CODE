@@ -5,14 +5,12 @@ import matplotlib.pyplot as plt
 def HBVMod( Par,PRCP, POT_EV,Sin, hydrograph):
     #HBVpareto Calculates values of 3 objective functions for HBV model
 
-    Imax=Par[0]
-    Ce=Par[1]
-    Sumax=Par[2]
-    beta=Par[3]
-    Pmax=Par[4]
-    Tlag=Par[5]
-    Kf=Par[6]
-    Ks=Par[7]
+    Imax=Par[0] 
+    Lp=Par[1] # maybe based on soil moisture?
+    Sumax=Par[2] # need field capacity + wilting point
+    Pmax=Par[3] # to be determined, experiment?
+    Kf=Par[4] # storage coefficient for fast responding lateral flow path
+    Ks=Par[5]
 
 
     Prec=PRCP
@@ -33,8 +31,7 @@ def HBVMod( Par,PRCP, POT_EV,Sin, hydrograph):
     Sf[0]=Sin[2]
     Ss[0]=Sin[3]
     
-    delta = 0.5
-    alpha = 0.5
+    delta = 0.5 #very problematic, fast lateral flow and fast groundwater flow (lateral vs vertical)
 
     dt=1
 
@@ -63,10 +60,9 @@ def HBVMod( Par,PRCP, POT_EV,Sin, hydrograph):
             # Unsaturated Reservoir - BUCKET 2
             
         if Pedt>0:
-            Qhfdt = alpha * Pedt
-            rho=(Su[i]/Sumax)**beta            
-            Su[i]=Su[i]+(1-alpha)*(1-rho)*Pedt
-            Qufdt=(1 - alpha)*rho*Pedt # fast GW recharge
+            rho=0.3           
+            Su[i]=Su[i]+(1-rho)*Pedt
+            Qufdt=rho*Pedt # fast GW recharge
         else:
             Qufdt=0
             Qhfdt = 0
@@ -77,7 +73,7 @@ def HBVMod( Par,PRCP, POT_EV,Sin, hydrograph):
             
             # Transpiration 
         Epdt=max(0,Epdt-Eidt[i])
-        Eadt[i]=Epdt*(Su[i]/(Sumax*Ce)) #plant transpiration
+        Eadt[i]=Epdt*(Su[i]/(Sumax*Lp)) #plant transpiration
         Eadt[i]=min(Eadt[i],Su[i])
         Su[i]=Su[i]-Eadt[i]
         
@@ -115,18 +111,7 @@ def HBVMod( Par,PRCP, POT_EV,Sin, hydrograph):
     WB=sum(Prec)-sum(Eidt)-sum(Eadt)-sum(Qtotdt)-Sf+Sin
     print(WB)
 
-    # Offset Q
-    '''
-    Weigths=Weigfun(Tlag)
     
-    Qm = np.convolve(Qtotdt,Weigths)
-    Qm=Qm[0:tmax]
-    # Calculate objective
-    ind=np.where(Qo>=0)
-    QoAv=Qo.mean()
-    ErrUp=np.sum((Qo-Qm)**2)
-    ErrDo=np.sum((Qo-QoAv)**2)
-    Obj=1-(ErrUp/ErrDo)'''
 
     if hydrograph == 'True':
     ## Plot
