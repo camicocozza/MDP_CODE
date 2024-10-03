@@ -4,10 +4,11 @@ from plateau import plateau
 from hillslope import hillslope
 from wetland import wetland
 
-def FLEXtopo( ParPlateau_cl, ParHillslope_cl, ParWetland_cl,  ParPlateau_un, ParHillslope_un, ParWetland_un, ParCatchment, PRCP, POT_EV, landscapes):
+def FLEXtopo( ParPlateau_cl, ParHillslope_cl, ParWetland_cl,  ParPlateau_un, ParHillslope_un, ParWetland_un, ParCatchment, PRCP, POT_EV, HUMAN, landscapes):
 
     Prec = PRCP
     Etp = POT_EV
+    Human = HUMAN
 
     #parameters and constants
     Tlag=ParCatchment[1]
@@ -63,8 +64,11 @@ def FLEXtopo( ParPlateau_cl, ParHillslope_cl, ParWetland_cl,  ParPlateau_un, Par
         Ss[t]=Ss[t]-min(Qsdt,Ss[t])
         if t<tmax-1:
             Ss[t+1]=Ss[t]
+            
+            
+        Qh = Human[t]
 
-        Qtotdt[t]=Qsdt+ Fluxes_plateau_cl[t,2]*landscapes[0] + Fluxes_hillslope_cl[t, 2]*landscapes[1] + Fluxes_wetland_cl[t,2]*landscapes[2]+ Fluxes_plateau_un[t,2]*landscapes[3] + Fluxes_hillslope_un[t, 2]*landscapes[4] + Fluxes_wetland_un[t, 2]*landscapes[5]
+        Qtotdt[t]=Qsdt+ Qh + Fluxes_plateau_cl[t,2]*landscapes[0] + Fluxes_hillslope_cl[t, 2]*landscapes[1] + Fluxes_wetland_cl[t,2]*landscapes[2]+ Fluxes_plateau_un[t,2]*landscapes[3] + Fluxes_hillslope_un[t, 2]*landscapes[4] + Fluxes_wetland_un[t, 2]*landscapes[5]
 
 
 
