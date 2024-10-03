@@ -66,7 +66,7 @@ def FLEXtopo( ParPlateau_cl, ParHillslope_cl, ParWetland_cl,  ParPlateau_un, Par
             Ss[t+1]=Ss[t]
             
             
-        Qh = Human[t]
+        Qh = (Human[t] * 100)
 
         Qtotdt[t]=Qsdt+ Qh + Fluxes_plateau_cl[t,2]*landscapes[0] + Fluxes_hillslope_cl[t, 2]*landscapes[1] + Fluxes_wetland_cl[t,2]*landscapes[2]+ Fluxes_plateau_un[t,2]*landscapes[3] + Fluxes_hillslope_un[t, 2]*landscapes[4] + Fluxes_wetland_un[t, 2]*landscapes[5]
 
