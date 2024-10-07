@@ -20,7 +20,6 @@ def plateau(  timestep, Par, Prec, Etp, Fluxes, States ):
 	Si=States[:,0]
 	Su=States[:,1]
 	Sf=States[:,2]
-    
 
 	Eidt=Fluxes[:,0]
 	Eadt=Fluxes[:,1]

@@ -36,6 +36,14 @@ def FLEXtopo( ParPlateau_cl, ParHillslope_cl, ParWetland_cl,  ParPlateau_un, Par
     Fluxes_wetland_un=np.zeros((tmax,4))
     Qsdt=np.zeros(tmax)
     Qtotdt=np.zeros(tmax)
+    Eidt=np.zeros(tmax)
+    Eadt=np.zeros(tmax)
+    Si=np.zeros(tmax)
+    Su=np.zeros(tmax)
+    Sf=np.zeros(tmax)
+    Sfin=np.zeros(tmax)
+    
+    
 
     #
     #loop over time
@@ -60,16 +68,36 @@ def FLEXtopo( ParPlateau_cl, ParHillslope_cl, ParWetland_cl,  ParPlateau_un, Par
         # Slow Reservoir
         Ss[t]=Ss[t]+ Fluxes_plateau_cl[t,3]*landscapes[0] + Fluxes_hillslope_cl[t, 3]*landscapes[1] + Fluxes_wetland_cl[t,3]*landscapes[2]+ Fluxes_plateau_un[t,3]*landscapes[3] + Fluxes_hillslope_un[t, 3]*landscapes[4] + Fluxes_wetland_un[t,3]*landscapes[5]
     
+    
+        Qh = (Human[t] * 2)
         Qsdt= dt*Ks*Ss[t] 
-        Ss[t]=Ss[t]-min(Qsdt,Ss[t])
+        Ss[t]=Ss[t]-min(Qsdt+Qh,Ss[t])
         if t<tmax-1:
             Ss[t+1]=Ss[t]
             
             
-        Qh = (Human[t] * 100)
+        
 
         Qtotdt[t]=Qsdt+ Qh + Fluxes_plateau_cl[t,2]*landscapes[0] + Fluxes_hillslope_cl[t, 2]*landscapes[1] + Fluxes_wetland_cl[t,2]*landscapes[2]+ Fluxes_plateau_un[t,2]*landscapes[3] + Fluxes_hillslope_un[t, 2]*landscapes[4] + Fluxes_wetland_un[t, 2]*landscapes[5]
+        
+        Eidt[t]=Fluxes_plateau_cl[t,0]*landscapes[0] + Fluxes_hillslope_cl[t, 0]*landscapes[1] + Fluxes_wetland_cl[t,0]*landscapes[2]+ Fluxes_plateau_un[t,0]*landscapes[3] + Fluxes_hillslope_un[t, 0]*landscapes[4] + Fluxes_wetland_un[t, 0]*landscapes[5]
+        
+        Eadt[t]=Fluxes_plateau_cl[t,1]*landscapes[0] + Fluxes_hillslope_cl[t, 1]*landscapes[1] + Fluxes_wetland_cl[t,1]*landscapes[2]+ Fluxes_plateau_un[t,1]*landscapes[3] + Fluxes_hillslope_un[t, 1]*landscapes[4] + Fluxes_wetland_un[t, 1]*landscapes[5]
+        
+        
+        Si[t]=States_plateau_cl[t,0]*landscapes[0] + States_hillslope_cl[t, 0]*landscapes[1] + States_wetland_cl[t,0]*landscapes[2]+ States_plateau_un[t,0]*landscapes[3] + States_hillslope_un[t, 0]*landscapes[4] + States_wetland_un[t, 0]*landscapes[5]
+        
+        Su[t]=States_plateau_cl[t,1]*landscapes[0] + States_hillslope_cl[t, 1]*landscapes[1] + States_wetland_cl[t,1]*landscapes[2]+ States_plateau_un[t,1]*landscapes[3] + States_hillslope_un[t, 1]*landscapes[4] + States_wetland_un[t, 1]*landscapes[5]
+        
+        Sf[t]=States_plateau_cl[t,2]*landscapes[0] + States_hillslope_cl[t, 2]*landscapes[1] + States_wetland_cl[t,2]*landscapes[2]+ States_plateau_un[t,2]*landscapes[3] + States_hillslope_un[t, 2]*landscapes[4] + States_wetland_un[t, 2]*landscapes[5]
+        
+        
+        Sfin=Si[-1]+Ss[-1]+Sf[-1]+Su[-1]
+        WB=sum(Prec)-sum(Eidt)-sum(Eadt)-sum(Qtotdt)-Sfin
 
+        
+        
+        #print(Fluxes_plateau_cl)
 
 
     # Offset Q
@@ -79,6 +107,6 @@ def FLEXtopo( ParPlateau_cl, ParHillslope_cl, ParWetland_cl,  ParPlateau_un, Par
 #     Qm = np.convolve(Qtotdt,Weigths)
 #     Qm=Qm[0:tmax]
 
-    return(Qtotdt)
+    return(WB)
 
 
