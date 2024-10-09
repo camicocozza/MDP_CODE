@@ -37,16 +37,28 @@ def plateau_un(  timestep, Par, Prec, Etp, Fluxes, States ):
 	Epdt=Etp[t]*dt
     
 	# Interception Reservoir
+	print("iteration", t)
 	if Pdt>0:
+		print("Pdt > 0", Pdt)
+		print("Si initial", Si)
 		Si[t]=Si[t]+Pdt
 		Pedt= max(0,Si[t]-Imax)
+		print("Pedt", Pedt)
 		Si[t]=Si[t]-Pedt
-		Eidt[t]=0
+		print("Si + Pdt - Pedt", Si)
+		Eidt[t]=min(Epdt,Si[t])
+		print("Eidt ", Eidt)
+		Si[t]=Si[t]-Eidt[t]
+		print("Si after evap", Si)
 	else:
 	# Evaporation only when there is no rainfall
+		print("Pdt < 0", Pdt)
 		Pedt=0
+		print("Pedt = 0", Pedt)
 		Eidt[t]=min(Epdt,Si[t])
+		print("Eidt ", Eidt)
 		Si[t]=Si[t]-Eidt[t]
+		print("Si - Eidt", Si)
 
 	if t<tmax-1:
 		Si[t+1]=Si[t]
@@ -54,22 +66,34 @@ def plateau_un(  timestep, Par, Prec, Etp, Fluxes, States ):
 
 	# Unsaturated Reservoir
 	if Pedt>0:
-		rho=max(0.1, Su[t]/Sumax)       
+		print("Pedt > 0", Pedt)
+		rho=max(0.1, Su[t]/Sumax)  
+		print("rho", rho)
 		# Qufdt = rho*Pedt
 		# Su[t] = Su[t]+ (Pedt-Qufdt)       
 		#rho= rho + max(0, Su[t]-Sumax)
 		#print(rho)        
-		Su[t]=Su[t]+((1-rho) * Pedt)# - max(0, Su[t]-Sumax)
-		Qufdt=(rho*Pedt)# + max(0, Su[t]-Sumax)
+		Su[t]=Su[t]+((1-rho) * Pedt)
+        
+		Qufdt=(rho*Pedt) + max(0, Su[t]-Sumax)
+		Su[t]= Su[t]- max(0, Su[t]-Sumax)
+		print("Su = Su[t]+((1-rho) < Sumax", Su)
+
+		print("Qufdt = rho*Pedt < Pedt", Qufdt)
 	else:
 		Qufdt=0
-	Su_try[t] = Su[t]
 
 	# Transpiration
+	print("Epdt", Epdt)
+	print("Eidt", Eidt) 
 	Epdt=max(0,Epdt-Eidt[t])
+	print("Epdt-Eidt", Epdt)
 	Eadt[t]=Epdt*(Su[t]/(Sumax*Ce))
+	print("Eadt[t]=Epdt*(Su[t]/(Sumax*Ce))", Eadt)
 	Eadt[t]=min(Eadt[t],Su[t])
+	print("Eadt[t]=min(Eadt[t],Su[t]))", Eadt)
 	Su[t]=Su[t]-Eadt[t]
+	print("Su update trans", Su)
 
 	# Percolation
 	Qusdt=(Su[t]/Sumax)*Pmax*dt
@@ -77,6 +101,8 @@ def plateau_un(  timestep, Par, Prec, Etp, Fluxes, States ):
 	if t<tmax-1:
 		Su[t+1]=Su[t]
 		#print(Su[t])
+	print("Su update per", Su)
+	print()
 
 
 	# Fast Reservoir
@@ -116,6 +142,3 @@ def plateau_un(  timestep, Par, Prec, Etp, Fluxes, States ):
 	Fluxes[:,4]=Qufdt
     
 	return(Fluxes, States)
-
-	
-
