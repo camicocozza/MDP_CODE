@@ -1,8 +1,12 @@
 import numpy       as np
+import matplotlib.pyplot as plt
 #from Weigfun import Weigfun
-from plateau import plateau
-from hillslope import hillslope
-from wetland import wetland
+from plateau_cl import plateau_cl
+from plateau_un import plateau_un
+from hillslope_cl import hillslope_cl
+from hillslope_un import hillslope_un
+from wetland_cl import wetland_cl
+from wetland_un import wetland_un
 
 def FLEXtopo( ParPlateau_cl, ParHillslope_cl, ParWetland_cl,  ParPlateau_un, ParHillslope_un, ParWetland_un, ParCatchment, PRCP, POT_EV, HUMAN, landscapes):
 
@@ -34,11 +38,14 @@ def FLEXtopo( ParPlateau_cl, ParHillslope_cl, ParWetland_cl,  ParPlateau_un, Par
     Fluxes_plateau_un=np.zeros((tmax,5))
     Fluxes_hillslope_un=np.zeros((tmax,5))
     Fluxes_wetland_un=np.zeros((tmax,5))
+    
     Qsdt=np.zeros(tmax)
     Qufdt=np.zeros(tmax)
     Qtotdt=np.zeros(tmax)
+    
     Eidt=np.zeros(tmax)
     Eadt=np.zeros(tmax)
+    
     Si=np.zeros(tmax)
     Su=np.zeros(tmax)
     Sf=np.zeros(tmax)
@@ -47,26 +54,25 @@ def FLEXtopo( ParPlateau_cl, ParHillslope_cl, ParWetland_cl,  ParPlateau_un, Par
     Si_un=np.zeros(tmax)
     
     
-
+    print("range", range(0,tmax))
     #
     #loop over time
     for t in range(0,tmax):
-
         #cleared
         #plateau
-        Fluxes_plateau_cl, States_plateau_cl=plateau( t, ParPlateau_cl, Prec, Etp, Fluxes_plateau_cl, States_plateau_cl )
+        Fluxes_plateau_cl, States_plateau_cl=plateau_cl( t, ParPlateau_cl, Prec, Etp, Fluxes_plateau_cl, States_plateau_cl )
         #hillslope
-        Fluxes_hillslope_cl, States_hillslope_cl=hillslope( t, ParHillslope_cl, Prec, Etp, Fluxes_hillslope_cl, States_hillslope_cl )
+        Fluxes_hillslope_cl, States_hillslope_cl=hillslope_cl( t, ParHillslope_cl, Prec, Etp, Fluxes_hillslope_cl, States_hillslope_cl )
         #wetland
-        Fluxes_wetland_cl, States_wetland_cl=wetland( t, ParWetland_cl, Prec, Etp, Fluxes_wetland_cl, States_wetland_cl )
+        Fluxes_wetland_cl, States_wetland_cl=wetland_cl( t, ParWetland_cl, Prec, Etp, Fluxes_wetland_cl, States_wetland_cl )
         
         #uncleared
         #plateau
-        Fluxes_plateau_un, States_plateau_un=plateau( t, ParPlateau_un, Prec, Etp, Fluxes_plateau_un, States_plateau_un )
+        Fluxes_plateau_un, States_plateau_un=plateau_un( t, ParPlateau_un, Prec, Etp, Fluxes_plateau_un, States_plateau_un )
         #hillslope
-        Fluxes_hillslope_un, States_hillslope_un=hillslope( t, ParHillslope_un, Prec, Etp, Fluxes_hillslope_un, States_hillslope_un )
+        Fluxes_hillslope_un, States_hillslope_un=hillslope_un( t, ParHillslope_un, Prec, Etp, Fluxes_hillslope_un, States_hillslope_un )
         #wetland
-        Fluxes_wetland_un, States_wetland_un=wetland( t, ParWetland_un, Prec, Etp, Fluxes_wetland_un, States_wetland_un )
+        Fluxes_wetland_un, States_wetland_un=wetland_un( t, ParWetland_un, Prec, Etp, Fluxes_wetland_un, States_wetland_un )
 
         # Slow Reservoir
         Ss[t]=Ss[t]+ Fluxes_plateau_cl[t,3]*landscapes[0] + Fluxes_hillslope_cl[t, 3]*landscapes[1] + Fluxes_wetland_cl[t,3]*landscapes[2]+ Fluxes_plateau_un[t,3]*landscapes[3] + Fluxes_hillslope_un[t, 3]*landscapes[4] + Fluxes_wetland_un[t,3]*landscapes[5]
@@ -105,7 +111,7 @@ def FLEXtopo( ParPlateau_cl, ParHillslope_cl, ParWetland_cl,  ParPlateau_un, Par
         Sfin=Si[-1]+Ss[-1]+Sf[-1]+Su[-1]
         WB=sum(Prec)-sum(Eidt)-sum(Eadt)-sum(Qtotdt)-Sfin
 
-        
+    #plt.plot(Su)
         
         #print(Fluxes_plateau_cl)
 

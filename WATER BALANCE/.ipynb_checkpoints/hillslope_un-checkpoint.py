@@ -1,10 +1,10 @@
 import numpy       as np
 #from Weigfun import Weigfun
 
-def hillslope(  timestep, Par, Prec, Etp, Fluxes, States ):
+def hillslope_un(  timestep, Par, Prec, Etp, Fluxes, States ):
     Imax=Par[0]
     Ce=Par[1]
-    Sumax=Par[2]
+    Sumax=10
     beta=Par[3]
     Pmax=Par[4]
     D=Par[5]
@@ -36,7 +36,7 @@ def hillslope(  timestep, Par, Prec, Etp, Fluxes, States ):
         Si[t]=Si[t]+Pdt
         Pedt=max(0,Si[t]-Imax)
         Si[t]=Si[t]-Pedt
-        Eidt[t]=min(Epdt, Si[t])
+        Eidt[t]=0
     else:
     # Evaporation only when there is no rainfall
         Pedt=0
@@ -52,8 +52,8 @@ def hillslope(  timestep, Par, Prec, Etp, Fluxes, States ):
         rho=max(0.1, Su[t]/Sumax)     
         #Qufdt = rho*Pedt
         # Su[t] = Su[t]+ (Pedt-Qufdt)
-        Su[t]=Su[t]+((1-rho)*Pedt) - max(0, Su[t]-Sumax)
-        Qufdt=(rho*Pedt) + max(0, Su[t]-Sumax)
+        Su[t]=Su[t]+((1-rho)*Pedt)# - max(0, Su[t]-Sumax)
+        Qufdt=(rho*Pedt) #+ max(0, Su[t]-Sumax)
         
     else:
         Qufdt=0

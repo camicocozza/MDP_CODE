@@ -1,12 +1,11 @@
 import numpy       as np
 #from Weigfun import Weigfun
 
-def wetland(  timestep, Par, Prec, Etp, Fluxes, States):
+def wetland_un(  timestep, Par, Prec, Etp, Fluxes, States):
 	#HBVpareto Calculates values of 3 objective functions for HBV model
-
 	Imax=Par[0]
 	Ce=Par[1]
-	Sumax=Par[2]
+	Sumax=10
 	beta=Par[3]
 	Pmax=Par[4]
 	Cmax=Par[5]
@@ -60,8 +59,8 @@ def wetland(  timestep, Par, Prec, Etp, Fluxes, States):
 		# Qufdt = rho*Pedt
 		# Su[t] = Su[t]+ (Pedt-Qufdt)
         
-		Su[t]=Su[t]+((1-rho)*Pedt) - max(0, Su[t]-Sumax)
-		Qufdt=(rho*Pedt) + max(0, Su[t]-Sumax)
+		Su[t]=Su[t]+((1-rho)*Pedt)# - max(0, Su[t]-Sumax)
+		Qufdt=(rho*Pedt)# + max(0, Su[t]-Sumax)
 	else:
 		Qufdt=0
 

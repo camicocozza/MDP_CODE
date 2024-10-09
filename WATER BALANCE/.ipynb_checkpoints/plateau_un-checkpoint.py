@@ -1,12 +1,12 @@
 import numpy       as np
+import matplotlib.pyplot as plt
 #from Weigfun import Weigfun
 
-def plateau(  timestep, Par, Prec, Etp, Fluxes, States ):
+def plateau_un(  timestep, Par, Prec, Etp, Fluxes, States ):
 	#HBVpareto Calculates values of 3 objective functions for HBV model
-
 	Imax=Par[0]
 	Ce=Par[1]
-	Sumax=Par[2]
+	Sumax=10
 	beta=Par[3]
 	Pmax=Par[4]
 	Kf=Par[5]
@@ -20,6 +20,7 @@ def plateau(  timestep, Par, Prec, Etp, Fluxes, States ):
 	Si=States[:,0]
 	Su=States[:,1]
 	Sf=States[:,2]
+	Su_try = np.zeros(len(Si))
 
 	Eidt=Fluxes[:,0]
 	Eadt=Fluxes[:,1]
@@ -34,12 +35,13 @@ def plateau(  timestep, Par, Prec, Etp, Fluxes, States ):
 
 	Pdt=Prec[t]*dt
 	Epdt=Etp[t]*dt
+    
 	# Interception Reservoir
 	if Pdt>0:
 		Si[t]=Si[t]+Pdt
 		Pedt= max(0,Si[t]-Imax)
 		Si[t]=Si[t]-Pedt
-		Eidt[t]=min(Epdt, Si[t])
+		Eidt[t]=0
 	else:
 	# Evaporation only when there is no rainfall
 		Pedt=0
@@ -57,10 +59,11 @@ def plateau(  timestep, Par, Prec, Etp, Fluxes, States ):
 		# Su[t] = Su[t]+ (Pedt-Qufdt)       
 		#rho= rho + max(0, Su[t]-Sumax)
 		#print(rho)        
-		Su[t]=Su[t]+((1-rho) * Pedt) - max(0, Su[t]-Sumax)
-		Qufdt=(rho*Pedt) + max(0, Su[t]-Sumax)
+		Su[t]=Su[t]+((1-rho) * Pedt)# - max(0, Su[t]-Sumax)
+		Qufdt=(rho*Pedt)# + max(0, Su[t]-Sumax)
 	else:
 		Qufdt=0
+	Su_try[t] = Su[t]
 
 	# Transpiration
 	Epdt=max(0,Epdt-Eidt[t])
@@ -73,7 +76,7 @@ def plateau(  timestep, Par, Prec, Etp, Fluxes, States ):
 	Su[t]=Su[t]-min(Qusdt,Su[t])
 	if t<tmax-1:
 		Su[t+1]=Su[t]
-		print(Su[t])
+		#print(Su[t])
 
 
 	# Fast Reservoir
@@ -111,7 +114,7 @@ def plateau(  timestep, Par, Prec, Etp, Fluxes, States ):
 	Fluxes[:,2]=Qfdt
 	Fluxes[:,3]=Qusdt
 	Fluxes[:,4]=Qufdt
-
+    
 	return(Fluxes, States)
 
 	
