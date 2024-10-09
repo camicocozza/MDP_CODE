@@ -23,6 +23,7 @@ def hillslope(  timestep, Par, Prec, Etp, Fluxes, States ):
     Eadt=Fluxes[:,1]
     Qfdt=Fluxes[:,2]
     Qusdt=Fluxes[:,3]
+    Qufdt=Fluxes[:,4]
 
     dt=1
     t=timestep
@@ -48,9 +49,12 @@ def hillslope(  timestep, Par, Prec, Etp, Fluxes, States ):
 
     # Unsaturated Reservoir
     if Pedt>0:
-        rho=0.3            
-        Su[t]=Su[t]+(1-rho)*Pedt
-        Qufdt=rho*Pedt
+        rho=max(0.1, Su[t]/Sumax)     
+        #Qufdt = rho*Pedt
+        # Su[t] = Su[t]+ (Pedt-Qufdt)
+        Su[t]=Su[t]+((1-rho)*Pedt) - max(0, Su[t]-Sumax)
+        Qufdt=(rho*Pedt) + max(0, Su[t]-Sumax)
+        
     else:
         Qufdt=0
 
@@ -96,6 +100,7 @@ def hillslope(  timestep, Par, Prec, Etp, Fluxes, States ):
     Fluxes[:,1]=Eadt
     Fluxes[:,2]=Qfdt
     Fluxes[:,3]=Qusdt
+    Fluxes[:,4]=Qufdt
 
 
     return(Fluxes, States)

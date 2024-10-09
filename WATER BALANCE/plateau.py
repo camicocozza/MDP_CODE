@@ -25,6 +25,8 @@ def plateau(  timestep, Par, Prec, Etp, Fluxes, States ):
 	Eadt=Fluxes[:,1]
 	Qfdt=Fluxes[:,2]
 	Qusdt=Fluxes[:,3]
+	Qufdt=Fluxes[:,4]
+    
 
 	dt=1
 	t=timestep
@@ -35,7 +37,7 @@ def plateau(  timestep, Par, Prec, Etp, Fluxes, States ):
 	# Interception Reservoir
 	if Pdt>0:
 		Si[t]=Si[t]+Pdt
-		Pedt=max(0,Si[t]-Imax)
+		Pedt= max(0,Si[t]-Imax)
 		Si[t]=Si[t]-Pedt
 		Eidt[t]=min(Epdt, Si[t])
 	else:
@@ -50,9 +52,13 @@ def plateau(  timestep, Par, Prec, Etp, Fluxes, States ):
 
 	# Unsaturated Reservoir
 	if Pedt>0:
-		rho=0.3            
-		Su[t]=Su[t]+(1-rho)*Pedt
-		Qufdt=rho*Pedt
+		rho=max(0.1, Su[t]/Sumax)       
+		# Qufdt = rho*Pedt
+		# Su[t] = Su[t]+ (Pedt-Qufdt)       
+		#rho= rho + max(0, Su[t]-Sumax)
+		#print(rho)        
+		Su[t]=Su[t]+((1-rho) * Pedt) - max(0, Su[t]-Sumax)
+		Qufdt=(rho*Pedt) + max(0, Su[t]-Sumax)
 	else:
 		Qufdt=0
 
@@ -67,11 +73,15 @@ def plateau(  timestep, Par, Prec, Etp, Fluxes, States ):
 	Su[t]=Su[t]-min(Qusdt,Su[t])
 	if t<tmax-1:
 		Su[t+1]=Su[t]
+		print(Su[t])
+
 
 	# Fast Reservoir
 	Sf[t]=Sf[t]+Qufdt
+	#print(Sf[t]) 
 	Qfdt[t]= dt*Kf*Sf[t]
 	Sf[t]=Sf[t]-min(Qfdt[t],Sf[t])
+	#print(Sf[t])    
 	if t<tmax-1:
 		Sf[t+1]=Sf[t]
 	    
@@ -100,6 +110,7 @@ def plateau(  timestep, Par, Prec, Etp, Fluxes, States ):
 	Fluxes[:,1]=Eadt
 	Fluxes[:,2]=Qfdt
 	Fluxes[:,3]=Qusdt
+	Fluxes[:,4]=Qufdt
 
 	return(Fluxes, States)
 
