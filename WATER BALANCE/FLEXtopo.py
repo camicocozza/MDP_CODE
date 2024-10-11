@@ -35,14 +35,18 @@ def FLEXtopo( ParPlateau_cl, ParHillslope_cl, ParWetland_cl,  ParPlateau_un, Par
     Fluxes_hillslope_cl=np.zeros((tmax,5))
     Fluxes_wetland_cl=np.zeros((tmax,5))
     
-    Fluxes_plateau_un=np.zeros((tmax,5))
+    Fluxes_plateau_un=np.zeros((tmax,6))
     Fluxes_hillslope_un=np.zeros((tmax,5))
     Fluxes_wetland_un=np.zeros((tmax,5))
     
     Qsdt=np.zeros(tmax)
     Qufdt=np.zeros(tmax)
     Qtotdt=np.zeros(tmax)
+    Qusdt=np.zeros(tmax)
+    Qsdt=np.zeros(tmax)
+    Qfdt=np.zeros(tmax)
     
+    Pedt = np.zeros(tmax)
     Eidt=np.zeros(tmax)
     Eadt=np.zeros(tmax)
     
@@ -54,7 +58,7 @@ def FLEXtopo( ParPlateau_cl, ParHillslope_cl, ParWetland_cl,  ParPlateau_un, Par
     Si_un=np.zeros(tmax)
     
     
-    print("range", range(0,tmax))
+    #print("range", range(0,tmax))
     #
     #loop over time
     for t in range(0,tmax):
@@ -75,37 +79,44 @@ def FLEXtopo( ParPlateau_cl, ParHillslope_cl, ParWetland_cl,  ParPlateau_un, Par
         Fluxes_wetland_un, States_wetland_un=wetland_un( t, ParWetland_un, Prec, Etp, Fluxes_wetland_un, States_wetland_un )
 
         # Slow Reservoir
-        Ss[t]=Ss[t]+ Fluxes_plateau_cl[t,3]*landscapes[0] + Fluxes_hillslope_cl[t, 3]*landscapes[1] + Fluxes_wetland_cl[t,3]*landscapes[2]+ Fluxes_plateau_un[t,3]*landscapes[3] + Fluxes_hillslope_un[t, 3]*landscapes[4] + Fluxes_wetland_un[t,3]*landscapes[5]
+        Ss[t]=Ss[t]+ Fluxes_plateau_cl[t,3]*landscapes[2] + Fluxes_hillslope_cl[t, 3]*landscapes[0] + Fluxes_wetland_cl[t,3]*landscapes[1]+ Fluxes_plateau_un[t,3]*landscapes[5] + Fluxes_hillslope_un[t, 3]*landscapes[3] + Fluxes_wetland_un[t,3]*landscapes[4]
     
     
         Qh = (Human[t] * 2)
-        Qsdt= dt*Ks*Ss[t] 
+        Qsdt[t]= dt*Ks*Ss[t] 
         # Qldt= 
-        Ss[t]=Ss[t]-min(Qsdt+Qh,Ss[t])
+        Ss[t]=Ss[t]-min(Qsdt[t]+Qh,Ss[t])
         if t<tmax-1:
             Ss[t+1]=Ss[t]
             
             
         
 
-        Qtotdt[t]=Qsdt+ Qh + Fluxes_plateau_cl[t,2]*landscapes[0] + Fluxes_hillslope_cl[t, 2]*landscapes[1] + Fluxes_wetland_cl[t,2]*landscapes[2]+ Fluxes_plateau_un[t,2]*landscapes[3] + Fluxes_hillslope_un[t, 2]*landscapes[4] + Fluxes_wetland_un[t, 2]*landscapes[5]
+        Qtotdt[t]=Qsdt[t]+ Qh + Fluxes_plateau_cl[t,2]*landscapes[2] + Fluxes_hillslope_cl[t, 2]*landscapes[0] + Fluxes_wetland_cl[t,2]*landscapes[1]+ Fluxes_plateau_un[t,2]*landscapes[5] + Fluxes_hillslope_un[t, 2]*landscapes[3] + Fluxes_wetland_un[t, 2]*landscapes[4]
         
-        Eidt[t]=Fluxes_plateau_cl[t,0]*landscapes[0] + Fluxes_hillslope_cl[t, 0]*landscapes[1] + Fluxes_wetland_cl[t,0]*landscapes[2]+ Fluxes_plateau_un[t,0]*landscapes[3] + Fluxes_hillslope_un[t, 0]*landscapes[4] + Fluxes_wetland_un[t, 0]*landscapes[5]
+        Eidt[t]=Fluxes_plateau_cl[t,0]*landscapes[2] + Fluxes_hillslope_cl[t, 0]*landscapes[0] + Fluxes_wetland_cl[t,0]*landscapes[1]+ Fluxes_plateau_un[t,0]*landscapes[5] + Fluxes_hillslope_un[t, 0]*landscapes[3] + Fluxes_wetland_un[t, 0]*landscapes[4]
         
-        Eadt[t]=Fluxes_plateau_cl[t,1]*landscapes[0] + Fluxes_hillslope_cl[t, 1]*landscapes[1] + Fluxes_wetland_cl[t,1]*landscapes[2]+ Fluxes_plateau_un[t,1]*landscapes[3] + Fluxes_hillslope_un[t, 1]*landscapes[4] + Fluxes_wetland_un[t, 1]*landscapes[5]
+        Eadt[t]=Fluxes_plateau_cl[t,1]*landscapes[2] + Fluxes_hillslope_cl[t, 1]*landscapes[0] + Fluxes_wetland_cl[t,1]*landscapes[1]+ Fluxes_plateau_un[t,1]*landscapes[5] + Fluxes_hillslope_un[t, 1]*landscapes[3] + Fluxes_wetland_un[t, 1]*landscapes[4]
                                
-        Qufdt[t]=Fluxes_plateau_cl[t,4]*landscapes[0] + Fluxes_hillslope_cl[t, 4]*landscapes[1] + Fluxes_wetland_cl[t,4]*landscapes[2]+ Fluxes_plateau_un[t,4]*landscapes[3] + Fluxes_hillslope_un[t, 4]*landscapes[4] + Fluxes_wetland_un[t, 4]*landscapes[5]
+        Qufdt[t]=Fluxes_plateau_cl[t,4]*landscapes[2] + Fluxes_hillslope_cl[t, 4]*landscapes[0] + Fluxes_wetland_cl[t,4]*landscapes[1]+ Fluxes_plateau_un[t,4]*landscapes[5] + Fluxes_hillslope_un[t, 4]*landscapes[3] + Fluxes_wetland_un[t, 4]*landscapes[4]
+        
+        Qfdt[t]=Fluxes_plateau_cl[t,2]*landscapes[2] + Fluxes_hillslope_cl[t, 2]*landscapes[0] + Fluxes_wetland_cl[t,2]*landscapes[1]+ Fluxes_plateau_un[t,2]*landscapes[5] + Fluxes_hillslope_un[t, 2]*landscapes[3] + Fluxes_wetland_un[t, 2]*landscapes[4]
+        
+        Qusdt[t]=Fluxes_plateau_cl[t,3]*landscapes[2] + Fluxes_hillslope_cl[t, 3]*landscapes[0] + Fluxes_wetland_cl[t,3]*landscapes[1]+ Fluxes_plateau_un[t,3]*landscapes[5] + Fluxes_hillslope_un[t, 3]*landscapes[3] + Fluxes_wetland_un[t, 3]*landscapes[4]
+        
+        #Pedt[t]=Fluxes_plateau_cl[t,5]*landscapes[2] + Fluxes_hillslope_cl[t, 5]*landscapes[0] + Fluxes_wetland_cl[t,5]*landscapes[1]+ Fluxes_plateau_un[t,5]*landscapes[5] + Fluxes_hillslope_un[t, 5]*landscapes[3] + Fluxes_wetland_un[t, 5]*landscapes[4]
+        
+        Pedt[t]=Fluxes_plateau_un[t,5]*landscapes[5]
         
         
-        Si[t]=States_plateau_cl[t,0]*landscapes[0] + States_hillslope_cl[t, 0]*landscapes[1] + States_wetland_cl[t,0]*landscapes[2]+ States_plateau_un[t,0]*landscapes[3] + States_hillslope_un[t, 0]*landscapes[4] + States_wetland_un[t, 0]*landscapes[5]
         
-        Su[t]=States_plateau_cl[t,1]*landscapes[0] + States_hillslope_cl[t, 1]*landscapes[1] + States_wetland_cl[t,1]*landscapes[2]+ States_plateau_un[t,1]*landscapes[3] + States_hillslope_un[t, 1]*landscapes[4] + States_wetland_un[t, 1]*landscapes[5]
+        Si[t]=States_plateau_cl[t,0]*landscapes[2] + States_hillslope_cl[t, 0]*landscapes[0] + States_wetland_cl[t,0]*landscapes[1]+ States_plateau_un[t,0]*landscapes[5] + States_hillslope_un[t, 0]*landscapes[3] + States_wetland_un[t, 0]*landscapes[4]
         
-        Sf[t]=States_plateau_cl[t,2]*landscapes[0] + States_hillslope_cl[t, 2]*landscapes[1] + States_wetland_cl[t,2]*landscapes[2]+ States_plateau_un[t,2]*landscapes[3] + States_hillslope_un[t, 2]*landscapes[4] + States_wetland_un[t, 2]*landscapes[5]
+        Su[t]=States_plateau_cl[t,1]*landscapes[2] + States_hillslope_cl[t, 1]*landscapes[0] + States_wetland_cl[t,1]*landscapes[1]+ States_plateau_un[t,1]*landscapes[5] + States_hillslope_un[t, 1]*landscapes[3] + States_wetland_un[t, 1]*landscapes[4]
+        
+        Sf[t]=States_plateau_cl[t,2]*landscapes[2] + States_hillslope_cl[t, 2]*landscapes[0] + States_wetland_cl[t,2]*landscapes[1]+ States_plateau_un[t,2]*landscapes[5] + States_hillslope_un[t, 2]*landscapes[3] + States_wetland_un[t, 2]*landscapes[4]
         
         
-        Si_cl[t]=States_plateau_cl[t,0]*landscapes[0] + States_hillslope_cl[t, 0]*landscapes[1] + States_wetland_cl[t,0]*landscapes[2]
-        Si_un[t]=States_plateau_un[t,0]*landscapes[3] + States_hillslope_un[t, 0]*landscapes[4] + States_wetland_un[t, 0]*landscapes[5]
         
         
         Sfin=Si[-1]+Ss[-1]+Sf[-1]+Su[-1]
@@ -123,7 +134,7 @@ def FLEXtopo( ParPlateau_cl, ParHillslope_cl, ParWetland_cl,  ParPlateau_un, Par
 #     Qm = np.convolve(Qtotdt,Weigths)
 #     Qm=Qm[0:tmax]
 
-    return(WB, Si, Su, Sf, Ss, Si_cl, Si_un, Qufdt, Eadt)
+    return(WB, Si, Su, Sf, Ss, Qufdt, Qfdt, Qusdt, Qsdt, Eadt, Eidt, Pedt)
 
 
 
