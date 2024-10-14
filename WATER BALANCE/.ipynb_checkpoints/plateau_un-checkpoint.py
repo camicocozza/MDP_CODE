@@ -6,7 +6,7 @@ def plateau_un(  timestep, Par, Prec, Etp, Fluxes, States ):
 	#HBVpareto Calculates values of 3 objective functions for HBV model
 	Imax=Par[0]
 	Ce=Par[1]
-	Sumax=10
+	Sumax= Par[2]
 	beta=Par[3]
 	Pmax=Par[4]
 	Kf=Par[5]
