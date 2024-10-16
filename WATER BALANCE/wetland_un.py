@@ -5,7 +5,7 @@ def wetland_un(  timestep, Par, Prec, Etp, Fluxes, States):
 	#HBVpareto Calculates values of 3 objective functions for HBV model
 	Imax=Par[0]
 	Ce=Par[1]
-	Sumax=10
+	Sumax=Par[2]
 	beta=Par[3]
 	Pmax=Par[4]
 	Cmax=Par[5]
@@ -55,7 +55,7 @@ def wetland_un(  timestep, Par, Prec, Etp, Fluxes, States):
 
 	# Unsaturated Reservoir
 	if Pedt>0:
-		rho=max(0.1, Su[t]/Sumax)    
+		rho=max(min(0.1, Pedt), Su[t]/Sumax)   
 		# Qufdt = rho*Pedt
 		# Su[t] = Su[t]+ (Pedt-Qufdt)
         

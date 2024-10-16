@@ -4,7 +4,7 @@ import numpy       as np
 def hillslope_cl(  timestep, Par, Prec, Etp, Fluxes, States ):
     Imax=Par[0]
     Ce=Par[1]
-    Sumax=10
+    Sumax=Par[2]
     beta=Par[3]
     Pmax=Par[4]
     D=Par[5]
@@ -49,7 +49,8 @@ def hillslope_cl(  timestep, Par, Prec, Etp, Fluxes, States ):
 
     # Unsaturated Reservoir
     if Pedt>0:
-        rho=max(0.1, Su[t]/Sumax)     
+        rho=max(min(0.1, Pedt), Su[t]/Sumax)  
+        rho =5 * rho
         #Qufdt = rho*Pedt
         # Su[t] = Su[t]+ (Pedt-Qufdt)
         Su[t]=Su[t]+((1-rho)*Pedt)# - max(0, Su[t]-Sumax)

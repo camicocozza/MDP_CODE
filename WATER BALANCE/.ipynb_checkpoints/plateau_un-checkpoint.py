@@ -69,7 +69,7 @@ def plateau_un(  timestep, Par, Prec, Etp, Fluxes, States ):
 	if Pedt[t]>0:
 		#print("Su, empty?", Su)
 		#print("Pedt > 0", Pedt)
-		rho=max(0.1, Su[t]/Sumax)  
+		rho=max(min(0.1, Pedt[t]), Su[t]/Sumax)  
 		#print("rho", rho)
 		# Qufdt = rho*Pedt
 		# Su[t] = Su[t]+ (Pedt-Qufdt)       
