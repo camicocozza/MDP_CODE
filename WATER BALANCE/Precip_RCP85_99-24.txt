@@ -1,0 +1,59 @@
+# <a href=http://climexp.knmi.nl/select.cgi?field=cmip5_pr_Amon_modmean_rcp85>climexp.knmi.nl/select.cgi?field=cmip5_pr_Amon_modmean_rcp85</a>
+# ave_region :: lon= -332.500    7.500, lat=  -25.000  -22.500
+# averaging anomalies over region lon= -332.500    7.500, lat=  -25.000  -22.500
+# branch_time :: 732311.0
+# cdi :: Climate Data Interface version 1.5.9 (http://code.zmaw.de/projects/cdi)
+# cdo :: Climate Data Operators version 1.5.9 (http://code.zmaw.de/projects/cdo)
+# cmor_version :: 2.8.0
+# contact :: multi-model mean computed by oldenborgh@knmi.nl
+# creation_date :: 2013-06-26T14:39:35Z
+# experiment :: RCP8.5
+# experiment_id :: historical+rcp85
+# file :: CMIP5/monthly/pr/pr_Amon_modmean_rcp85_000.nc
+# forcing :: GHG, Oz, SA, Sl, Vl, BC, OC, (GHG,global,o,s,CO2, N2O, CH4, CFC11, CFC12, CFC113, HCFC22, HFC125, HFC134a)
+# frequency :: mon
+# history ::  2024-10-16  8:45:15 bin/get_index CMIP5/monthly/pr/pr_Amon_modmean_rcp85_000.nc 28.529 8.556 -22.576 -22.430 dipole no year1 1999 year2 2024 minfac 30 nearest lsmask CMIP5/monthly/lsmask_cmip3_144.nc all nomissing standardunits cmip5_pr_Amon_modmean_rcp85_28.529-8.556E_-22.576--22.430N_1999-2024_n_su_+++\nWed Jun 26 16:39:35 2013: ncatted -a acknowledgements,global,d,, -a references,global,d,, -a institution,global,m,c,multi-model mean computed at KNMI -a institute_id,global,d,, -a model_id,global,m,c,multi-model -a parent_experiment_id,global,d,, -a parent_experiment_rip,global,d,, -a contact,global,m,c,multi-model mean computed by oldenborgh@knmi.nl -a tracking_id,global,d,, -a creation_date,global,m,c,2013-06-26T14:39:35Z -a title,global,m,c,Multi-model mean of historical+rcp85 experiments of ACCESS1-0 ACCESS1-3 bcc-csm1-1 BNU-ESM CanESM2 CCSM4 CESM1-BGC CESM1-CAM5 CMCC-CM CMCC-CMS CNRM-CM5 CSIRO-Mk3-6-0 EC-EARTH FGOALS-g2 FIO-ESM GFDL-CM3 GFDL-ESM2G GFDL-ESM2M GISS-E2-H GISS-E2-H GISS-E2-H GISS-E2-R GISS-E2-R GISS-E2-R HadGEM2-AO HadGEM2-CC HadGEM2-ES inmcm4 IPSL-CM5A-LR IPSL-CM5A-MR IPSL-CM5B-LR MIROC5 MIROC-ESM MIROC-ESM-CHEM MPI-ESM-LR MPI-ESM-MR MRI-CGCM3 NorESM1-M NorESM1-ME -a parent_experiment,global,d,, -a realization,global,m,c,multi-model mean pr/pr_Amon_modmean_rcp85_000.nc\nWed Jun 26 16:35:48 2013: cdo -f nc4 -z zip -r ensmean pr/pr_Amon_mod_rcp85_000.nc pr/pr_Amon_mod_rcp85_001.nc pr/pr_Amon_mod_rcp85_002.nc pr/pr_Amon_mod_rcp85_003.nc pr/pr_Amon_mod_rcp85_004.nc pr/pr_Amon_mod_rcp85_005.nc pr/pr_Amon_mod_rcp85_006.nc pr/pr_Amon_mod_rcp85_007.nc pr/pr_Amon_mod_rcp85_008.nc pr/pr_Amon_mod_rcp85_009.nc pr/pr_Amon_mod_rcp85_010.nc pr/pr_Amon_mod_rcp85_011.nc pr/pr_Amon_mod_rcp85_012.nc pr/pr_Amon_mod_rcp85_013.nc pr/pr_Amon_mod_rcp85_014.nc pr/pr_Amon_mod_rcp85_015.nc pr/pr_Amon_mod_rcp85_016.nc pr/pr_Amon_mod_rcp85_017.nc pr/pr_Amon_mod_rcp85_018.nc pr/pr_Amon_mod_rcp85_019.nc pr/pr_Amon_mod_rcp85_020.nc pr/pr_Amon_mod_rcp85_021.nc pr/pr_Amon_mod_rcp85_022.nc pr/pr_Amon_mod_rcp85_023.nc pr/pr_Amon_mod_rcp85_024.nc pr/pr_Amon_mod_rcp85_025.nc pr/pr_Amon_mod_rcp85_026.nc pr/pr_Amon_mod_rcp85_027.nc pr/pr_Amon_mod_rcp85_028.nc pr/pr_Amon_mod_rcp85_029.nc pr/pr_Amon_mod_rcp85_030.nc pr/pr_Amon_mod_rcp85_031.nc pr/pr_Amon_mod_rcp85_032.nc pr/pr_Amon_mod_rcp85_033.nc pr/pr_Amon_mod_rcp85_034.nc\nThu Mar 28 16:11:48 2013: ncks -v pr pr/pr_Amon_NorESM1-ME_rcp85_r1i1p1_144.nc aap_10419.nc\nThu Mar 28 16:11:41 2013: cdo -f nc4 -z zip -r -remapcon,144x72grid.txt aap_10419.nc pr/pr_Amon_NorESM1-ME_rcp85_r1i1p1_144.nc\nThu Mar 28 16:11:31 2013: cdo -f nc4 -z zip -r -seldate,1861-01-01,2100-12-31 pr/pr_Amon_NorESM1-ME_rcp85_r1i1p1.nc aap_10419.nc\nThu Mar 28 14:55:53 2013: cdo -f nc4 -z zip copy pr/pr_Amon_NorESM1-ME_historical_r1i1p1.nc ethz/cmip5/rcp85/Amon/pr/NorESM1-ME/r1i1p1/pr_Amon_NorESM1-ME_rcp85_r1i1p1_200601-204412.nc ethz/cmip5/rcp85/Amon/pr/NorESM1-ME/r1i1p1/pr_Amon_NorESM1-ME_rcp85_r1i1p1_204501-210012.nc pr/pr_Amon_NorESM1-ME_rcp85_r1i1p1.nc\nWed Mar 27 14:05:13 2013: cdo -f nc4 -z zip copy ethz/cmip5/historical/Amon/pr/NorESM1-ME/r1i1p1/pr_Amon_NorESM1-ME_historical_r1i1p1_185001-200512.nc pr/pr_Amon_NorESM1-ME_historical_r1i1p1.nc\n2012-03-01T07:23:22Z CMOR rewrote data to comply with CF standards and CMIP5 requirements.
+# initialization_method ::        1
+# institution :: KNMI Climate Explorer and multi-model mean computed at KNMI
+# minimal_valid_fraction ::  30.00
+# model_id :: multi-model
+# modeling_realm :: atmos
+# nco :: 4.0.8
+# operating on Multi-model mean of historical+rcp85 experiments of ACCESS1-0 ACCESS1-3 bcc-csm1-1 BNU-ESM CanESM2 CCSM4 CESM1-BGC CESM1-CAM5 CMCC-CM CMCC-CMS CNRM-CM5 CSIRO-Mk3-6-0 EC-EARTH FGOALS-g2 FIO-ESM GFDL-CM3 GFDL-ESM2G GFDL-ESM2M GISS-E2-H GISS-E2-H GISS-E2-H GISS-E2-R GISS-E2-R GISS-E2-R HadGEM2-AO HadGEM2-CC HadGEM2-ES inmcm4 IPSL-CM5A-LR IPSL-CM5A-MR IPSL-CM5B-LR MIROC5 MIROC-ESM MIROC-ESM-CHEM MPI-ESM-LR MPI-ESM-MR MRI-CGCM3 NorESM1-M NorESM1-ME
+# physics_version ::        1
+# pr [mm/day] Precipitation
+# product :: output
+# project_id :: CMIP5
+# realization :: multi-model mean
+# scripturl01 :: http://climexp.knmi.nl/get_index.cgi?email=someone@somewhere&field=cmip5_pr_Amon_modmean_rcp85&gridpoints=false&intertype=nearest&lat1=-22.576&lat2=-22.430&lon1=28.529&lon2=8.556&masktype=all&standardunits=standardunits&year1=1999&year2=2024
+# table_id :: Table Amon (27 April 2011) 9c851218e3842df9a62ef38b1e2575bb
+# title :: spatial statistic of Multi-model mean of historical+rcp85 experiments of ACCESS1-0 ACCESS1-3 bcc-csm1-1 BNU-ESM CanESM2 CCSM4 CESM1-BGC CESM1-CAM5 CMCC-CM CMCC-CMS CNRM-CM5 CSIRO-Mk3-6-0 EC-EARTH FGOALS-g2 FIO-ESM GFDL-CM3 GFDL-ESM2G GFDL-ESM2M GISS-E2-H GISS-E2-H GISS-E2-H GISS-E2-R GISS-E2-R GISS-E2-R HadGEM2-AO HadGEM2-CC HadGEM2-ES inmcm4 IPSL-CM5A-LR IPSL-CM5A-MR IPSL-CM5B-LR MIROC5 MIROC-ESM MIROC-ESM-CHEM MPI-ESM-LR MPI-ESM-MR MRI-CGCM3 NorESM1-M NorESM1-ME
+# using year1  1999
+# using year2  2024
+# version_number :: v20120115
+1999   2.746299       2.980046       2.863973       2.245828       1.869911       1.708007       1.559313       1.379854       1.333746       1.469310       1.812889       2.318282    
+2000   2.806763       2.946142       2.777776       2.253708       1.907722       1.770818       1.589943       1.357660       1.298655       1.423789       1.772381       2.313383    
+2001   2.793630       3.044098       2.809296       2.279133       1.854206       1.740266       1.532681       1.405642       1.280979       1.479883       1.795496       2.246956    
+2002   2.702489       2.945315       2.791295       2.268575       1.937155       1.684813       1.487471       1.388960       1.291796       1.447871       1.852563       2.263761    
+2003   2.756239       3.095615       2.827241       2.318321       1.969682       1.714249       1.565562       1.392462       1.265445       1.487829       1.799138       2.312095    
+2004   2.807964       2.943264       2.776613       2.302210       1.917384       1.772566       1.562594       1.390532       1.310172       1.459324       1.756920       2.243384    
+2005   2.781071       3.070797       2.788345       2.256246       1.912327       1.743505       1.570634       1.393764       1.312750       1.424449       1.801600       2.257587    
+2006   2.650607       3.072986       2.716369       2.244911       1.920979       1.731884       1.585076       1.353133       1.287994       1.455762       1.803277       2.232018    
+2007   2.770641       3.024180       2.856704       2.312388       1.890615       1.741784       1.592541       1.392417       1.313508       1.469674       1.739481       2.258086    
+2008   2.797236       3.036929       2.846421       2.280607       1.921602       1.762931       1.564525       1.390347       1.297292       1.404988       1.792874       2.221240    
+2009   2.681136       3.032247       2.794788       2.277295       1.920266       1.736337       1.578607       1.394399       1.281783       1.497395       1.788134       2.270624    
+2010   2.773601       2.961540       2.801953       2.293726       1.921664       1.738830       1.565798       1.356787       1.280978       1.417282       1.780371       2.347833    
+2011   2.745042       2.962636       2.795673       2.284544       1.947988       1.703644       1.526423       1.301545       1.336076       1.436119       1.845310       2.310411    
+2012   2.766299       3.004620       2.828789       2.283423       1.972228       1.733141       1.578014       1.446024       1.295564       1.449912       1.817230       2.266783    
+2013   2.735064       3.036674       2.748527       2.235244       1.921312       1.724355       1.581863       1.450021       1.350744       1.471781       1.778184       2.209456    
+2014   2.731963       2.977281       2.782787       2.297502       1.910958       1.729172       1.587566       1.379680       1.311217       1.439013       1.816206       2.242849    
+2015   2.695675       3.006299       2.902904       2.266719       1.850028       1.832376       1.542789       1.310720       1.292775       1.356264       1.719577       2.333380    
+2016   2.722101       3.004699       2.792719       2.310314       1.898411       1.668971       1.544585       1.341092       1.235791       1.422204       1.738598       2.196018    
+2017   2.697253       3.036457       2.809526       2.308157       1.939998       1.773334       1.538076       1.346847       1.264118       1.458086       1.761657       2.257762    
+2018   2.742184       2.973053       2.792377       2.234993       1.956546       1.750229       1.528783       1.346461       1.322195       1.464397       1.759495       2.276922    
+2019   2.765438       2.969377       2.757632       2.270602       1.937736       1.750648       1.564797       1.393066       1.293186       1.435123       1.797809       2.235014    
+2020   2.690982       3.033638       2.756279       2.294600       1.957098       1.786752       1.553276       1.338788       1.240393       1.410042       1.759285       2.248187    
+2021   2.654987       2.975980       2.791373       2.178028       1.870096       1.705587       1.504748       1.324346       1.294197       1.386693       1.687967       2.153358    
+2022   2.721811       2.937126       2.751561       2.243047       1.882491       1.686728       1.554294       1.313757       1.274572       1.428888       1.763111       2.204939    
+2023   2.738101       2.980011       2.852834       2.263510       1.869201       1.703622       1.573341       1.381615       1.283436       1.431854       1.828692       2.263421    
+2024   2.798092       3.005597       2.825583       2.280759       1.893321       1.719245       1.565654       1.362617       1.239323       1.441056       1.797231       2.292384    
