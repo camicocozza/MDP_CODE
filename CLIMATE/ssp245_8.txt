@@ -1,0 +1,117 @@
+# <a href=http://climexp.knmi.nl/select.cgi?field=cmip6_pr_mon_one_ssp245>climexp.knmi.nl/select.cgi?field=cmip6_pr_mon_one_ssp245</a>
+# activity_id :: CMIP
+# ave_region :: lon=   27.188   29.062, lat=  -23.750  -22.500
+# averaging anomalies over region lon=   27.188   29.062, lat=  -23.750  -22.500
+# branch_method :: Spin-up documentation
+# cccma_model_hash :: 3dedf95315d603326fde4f5340dc0519d80d10c0
+# cccma_parent_runid :: rc3-pictrl
+# cccma_pycmor_hash :: 33c30511acc319a98240633965a04ca99c26427e
+# cccma_runid :: rc3.1-his01
+# cdi :: Climate Data Interface version ?? (http://mpimet.mpg.de/cdi)
+# cdo :: Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)
+# cmip6-ng :: \ncontact = cmip6-archive@env.ethz.ch\ndescription = ETH Zurich CMIP6 "next generation" (ng) archive.\ndisclaimer = This dataset is provided "as is", without warranty of any kind.\nfixes = delete latitude bounds; delete longitude bounds; delete time bounds\ngit = 2019-12-17 18:26:09 git@git.iac.ethz.ch:cmip6-ng/cmip6-ng.git: master v1.5-6-g3802cf0\nownership = The ownership of this dataset remains with the original provider\nunfixed_is
+# cmor_version :: 3.4.0
+# contact :: ec.cccma.info-info.ccmac.ec@canada.ca
+# creation_date :: 2019-04-30T17:32:09Z
+# data_specs_version :: 01.00.29
+# experiment :: all-forcing simulation of the recent past
+# experiment_id :: historical
+# external_variables :: areacella
+# file :: CMIP6/monthly/pr/pr_mon_one_ssp245_192_007.nc
+# forcing_index ::                1
+# frequency :: mon
+# further_info_url :: https://furtherinfo.es-doc.org/CMIP6.CCCma.CanESM5.historical.none.r1i1p1f1
+# grid :: T63L49 native atmosphere, T63 Linear Gaussian Grid; 128 x 64 longitude/latitude; 49 levels; top level 1 hPa
+# grid_label :: gn
+# history ::  2024-10-17 12:52:34 bin/get_index CMIP6/monthly/pr/pr_mon_one_ssp245_192_007.nc 28.529 28.556 -22.576 -22.430 dipole no year1 1999 year2 2050 minfac 30 nearest lsmask CMIP6/cmip6masks/lsm_cmip6_192x144_best.nc all nomissing standardunits cmip6_pr_mon_one_ssp245_28.529-28.556E_-22.576--22.430N_1999-2050_n_su_+++\nFri Jun 18 11:21:07 2021: cdo -r -f nc4 -z zip remapcon,r192x144 pr_mon_CanESM5_historical+ssp245_r1i1p1f1_CEmerged_ETH_native.nc /home/oldenbor/climexp_data/CMIP6/monthly/pr/pr_mon_CanESM5_ssp245_r1i1p1f1_192_000.nc\n2019-04-30T17:32:09Z ;rewrote data to be consistent with CMIP for variable pr found in table Amon.;\nOutput from $runid
+# initialization_index ::                1
+# institution :: KNMI Climate Explorer and Canadian Centre for Climate Modelling and Analysis, Environment and Climate Change Canada, Victoria, BC V8P 5C2, Canada
+# institution_id :: CCCma
+# license :: CMIP6 model data produced by The Government of Canada (Canadian Centre for Climate Modelling and Analysis, Environment and Climate Change Canada) is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.
+# minimal_valid_fraction ::  30.00
+# mip_era :: CMIP6
+# nominal_resolution :: 500 km
+# operating on CanESM5 output prepared for CMIP6
+# original_file_hash_codes :: d42d0fce847e453e221c898debd51fdecc7af4f6e59c7501f85b5969c8d6867a
+# original_file_names :: /net/atmos/data/cmip6/historical/Amon/pr/CanESM5/r1i1p1f1/gn/pr_Amon_CanESM5_historical_r1i1p1f1_gn_185001-201412.nc
+# parent_activity_id :: CMIP
+# parent_experiment_id :: piControl
+# parent_mip_era :: CMIP6
+# parent_source_id :: CanESM5
+# parent_time_units :: days since 1850-01-01 0:0:0.0
+# parent_variant_label :: r1i1p1f1
+# physics_index ::                1
+# pr [mm/day] Precipitation
+# product :: model-output
+# realization_index ::                1
+# realm :: atmos
+# references :: Geophysical Model Development Special issue on CanESM5 (https://www.geosci-model-dev.net/special_issues.html)
+# scripturl01 :: http://climexp.knmi.nl/get_index.cgi?email=someone@somewhere&field=cmip6_pr_mon_one_ssp245&gridpoints=false&intertype=nearest&lat1=-22.576&lat2=-22.430&lon1=28.529&lon2=28.556&masktype=all&standardunits=standardunits&year1=1999&year2=2050
+# source :: CanESM5 (2019): \naerosol: interactive\natmos: CanAM5 (T63L49 native atmosphere, T63 Linear Gaussian Grid; 128 x 64 longitude/latitude; 49 levels; top level 1 hPa)\natmosChem: specified oxidants for aerosols\nland: CLASS3.6/CTEM1.2\nlandIce: specified ice sheets\nocean: NEMO3.4.1 (ORCA1 tripolar grid, 1 deg with refinement to 1/3 deg within 20 degrees of the equator; 361 x 290 longitude/latitude; 45 vertical levels; top grid cell 0-6.19 m)\nocnBgchem: Canadian Model of Ocean Carbon (CMOC); NPZD ecosystem with OMIP prescribed carbonate chemistry\nseaI
+# source_id :: CanESM5
+# source_type :: AOGCM
+# sub_experiment :: none
+# sub_experiment_id :: none
+# table_id :: Amon
+# table_info :: Creation Date:(20 February 2019) MD5:374fbe5a2bcca535c40f7f23da271e49
+# title :: spatial statistic of CanESM5 output prepared for CMIP6
+# tracking_id :: hdl:21.14100/363e1ebe-46e7-43dc-9feb-a7a4a0c9517b
+# using year1  1999
+# using year2  2050
+# variable_id :: pr
+# variant_label :: r1i1p1f1
+# version :: v20190429
+# ymdh_branch_time_in_child :: 1850:01:01:00
+# ymdh_branch_time_in_parent :: 5201:01:01:00
+1999   2.288400       1.096603       2.291984      0.9943158       1.498925      0.8973277      0.1284167      0.8183630E-01  0.6279990E-02   1.843178       4.752597       5.930428    
+2000   3.681947       4.518291       2.251184      0.1497384       2.742664      0.3810535       1.124562      0.6612708E-01  0.4790719       1.389609       1.877053       2.695513    
+2001   1.870678       3.428511       1.553009       1.514696       1.699462      0.2611170      0.8058652E-01  0.7624868      0.2783094E-01   2.190429       4.534216       4.927425    
+2002   5.539369       2.816519      0.8649573       1.098267      0.5044061      0.4155299      0.2854997E-01  0.7732065      0.8134414E-02   1.217145       2.972138       5.442622    
+2003   1.156956      0.3728458       3.275346      0.4485479      0.1164639      0.1566602      0.1505361      0.5266619E-01  0.3936751      0.3066925       2.709542       7.652737    
+2004   2.532458       1.653549      0.7125769      0.6844422       1.101538       1.130394      0.7914423E-01  0.3540811      0.8367166      0.4390067       3.586063       8.340974    
+2005   6.339753       1.628106       2.594912      0.9944168E-01  0.8679571      0.4494548      0.5565779      0.8831140E-01  0.2190638      0.7097639       3.251589       8.407594    
+2006   8.166557       6.356037       3.032016       1.781769      0.2469881      0.1328558      0.6335194E-01  0.9439766E-01  0.1615295      0.9733759       2.174102       9.345032    
+2007   3.666008       8.836008       7.842625      0.9819612      0.1285896      0.2012592      0.1358958      0.1235338      0.2719837      0.6920597       4.644389       13.49196    
+2008   5.632051       5.931862       1.141541      0.3621653      0.2277683      0.3765192E-01  0.3329233      0.6136352E-01  0.9305050E-01   3.544396       2.353159       4.165506    
+2009   9.059690       9.843698       1.616570       2.281058      0.4379699      0.6658065      0.5255249E-01  0.2825586E-01  0.1243951       1.465484       4.325510       4.437049    
+2010   11.04251       8.106499       3.498390      0.4033475      0.2237438      0.1744983      0.5037326      0.5403970E-01  0.1186261      0.9656489       2.630943       1.702366    
+2011   2.026265       2.332859      0.7320940      0.8178332      0.2789228      0.9662157E-01  0.5292149E-01  0.7496852E-01  0.3226502      0.1948574       2.813338       1.867219    
+2012   3.783890       1.419758       2.124691      0.8910618E-01  0.2557641      0.4938097E-01  0.1518473      0.1748576E-01  0.7988726      0.5017971       3.149630       8.055585    
+2013   5.277011       3.490328       1.719427      0.1975059       1.147027      0.1915275      0.8500543E-01  0.5628857E-01  0.3745530E-01  0.7732815       3.616633       3.225129    
+2014   3.681762       1.702741       1.889873      0.5786241E-01  0.1147807       2.313848      0.8807916E-01  0.4393094E-01  0.2594343      0.3501824       4.664575       4.089698    
+2015   11.59447       3.217623       2.017199      0.3626260      0.6844025      0.4542818      0.1579225      0.6765611E-01  0.1904880E-01  0.3095580       3.640507       4.564432    
+2016   1.869604       1.082019       1.422960       2.206686      0.4127229      0.1770178      0.3517429      0.1856725      0.8333538E-01   1.028760       3.620401       1.368333    
+2017   4.342554       8.619413       1.356743      0.4782830      0.3224640      0.1380027      0.3912439E-01  0.3726103E-01  0.5545554E-01   1.451873       2.668507       5.538289    
+2018   9.358357       1.407849       6.708193      0.4277500      0.2585144      0.2365273      0.8338932E-01  0.5678061E-01  0.5549000E-01   1.604641       4.039805       10.58069    
+2019   5.525704      0.8729064       1.355696      0.2784473      0.3378512      0.2269483      0.2929311      0.1249633      0.3051530E-01  0.2614003E-01   4.198704       2.620511    
+2020   2.204927       1.915308       6.032723      0.6233322      0.1197987      0.5277748E-01  0.7716420E-01  0.9178032E-01  0.1198375      0.7541569       2.491071       3.729233    
+2021   9.304047       6.429787       4.466155       1.856166      0.7197041      0.1166972      0.6929392E-01  0.5217247E-01  0.2248412      0.9207587       4.109491       2.501715    
+2022   5.376093       1.861125       2.143404       1.616445      0.4072562      0.2277907      0.9633456      0.1380580       1.203554       1.705541      0.5638165       6.860111    
+2023   3.897386       2.322931      0.4197405      0.3010445      0.1535942      0.2815887      0.1634611      0.4918913E-01  0.3337958E-01  0.3338999       2.561312       5.430525    
+2024   1.847193       11.32474       6.056206      0.3056022      0.3461686      0.1775504      0.1477773E-01  0.7610317E-01  0.9372044       1.548498       2.699144       8.354100    
+2025   12.64192       5.771163      0.5650752      0.4278664       3.867970      0.1040561      0.9755461E-01  0.3170696E-01  0.7127458      0.9335135       9.772891       11.46894    
+2026   4.313240       16.16525       1.039464      0.4595857      0.8027358E-01  0.9395286      0.4832076E-01  0.2528173E-01  0.6588989E-01  0.4474179       3.274195       1.036921    
+2027   3.519885       1.419128       1.428322      0.8161758      0.5032691      0.1273002      0.6760308E-01  0.5162512E-01  0.8763311E-01  0.4948457       2.408927       5.962887    
+2028   2.324734      0.3986652      0.1759763      0.2395276      0.7819426E-01  0.1100643      0.1003284      0.1419542E-01  0.6051492E-02   1.536559       2.571856       13.17281    
+2029  0.8658954       5.669321      0.5997987      0.4986220      0.4060365      0.2050736      0.3298296E-01  0.9454886E-01  0.3606156      0.2639682       2.344014       5.880229    
+2030   3.060252       2.181499      0.6522000      0.6520500      0.1129865      0.3563132      0.1063154      0.6018252E-01  0.2421205      0.9711908       2.859929       1.767303    
+2031   2.215074       1.463175       3.285299      0.8397463      0.3705477E-01  0.4909090      0.1697558      0.8148216E-01  0.4034780      0.7827287       1.629889       2.831526    
+2032  0.8853936       2.454046       3.687205      0.6405962      0.2276723      0.1091953      0.9763498E-01  0.3065605      0.8511177      0.4542394       8.018116       5.956363    
+2033   3.458645       2.259569       1.278012       1.845528      0.1829417      0.1692220      0.7268278E-01  0.1145581      0.3551619       1.281419       9.898857       1.427753    
+2034   10.62723       3.033905       3.885434      0.3727621      0.1396079      0.9174901E-01  0.8035146E-01  0.2891812E-01  0.2397791E-01   2.495569       1.126291       2.265219    
+2035   3.456378       6.226398       5.210239      0.6996117      0.7605305      0.1736083      0.1107404      0.6222916E-01  0.5696281      0.9323826       3.894250       2.083198    
+2036   1.386149       3.248881       1.354259       1.945362      0.1591588      0.5238826E-01  0.1850933      0.8201011E-01  0.2281891      0.9218272       3.252406       4.087903    
+2037   3.368302       4.673096       1.087548       1.633504      0.2398401      0.6964581E-01  0.1170467      0.2251096E-01   1.298955      0.2836335       4.104834       6.438153    
+2038   17.18205      0.4572065      0.1101947      0.9977253      0.8021201E-01  0.3443592      0.1356777      0.1802105E-01  0.1505048E-01  0.2174839       2.370732       5.191297    
+2039   7.269694       3.643719      0.3205574      0.6841416E-01  0.2097485      0.4300534E-01  0.1545685      0.2190691      0.2980467       1.657425       1.924236       9.320121    
+2040   11.26535       2.631309       4.483183       1.707654      0.8918024E-01  0.1668952      0.3242649      0.3001740      0.1896696E-01  0.4268819       1.730460       4.977513    
+2041   12.04272       10.65629      0.9399332      0.5068083      0.2222066      0.3391573      0.5745091      0.1291396      0.1465513      0.7580724      0.8875208       4.798234    
+2042   10.78004       6.821287       5.779827       1.514262      0.1690014      0.2404242      0.3743205E-01  0.9027884      0.2721424       1.576484       4.093898       5.616984    
+2043   1.617884      0.6326951      0.9784504E-01  0.2320523      0.1171277      0.1643035      0.4927061E-01  0.6394268E-01  0.1204094      0.6622679       8.330794       7.636617    
+2044   2.482753       2.867437       2.684828       1.446729      0.6326043      0.1103658      0.1071585      0.1383329      0.5845774E-02  0.4435689       1.903811       2.448169    
+2045   1.343636       1.325690      0.5513235      0.3425609      0.1917589      0.1217232      0.1168872      0.7450048E-01  0.1554902      0.2775271       2.106523       3.707564    
+2046   11.99140       2.226867       6.473644      0.7238447      0.1389438       1.345683      0.2394883      0.4549335E-01  0.2716918E-01  0.6787923       1.402309       4.775650    
+2047   4.070814       8.498872       3.576002      0.4694278      0.2457263      0.5689943E-01  0.5328197E-01  0.3628740E-02  0.9084090E-01  0.8845652       1.005582       1.938748    
+2048   14.17806       5.879267      0.2175918      0.7100440      0.3774838      0.2096831      0.1388836E-01  0.5717092E-01  0.3145546E-01  0.6472123       2.480175       3.974839    
+2049   5.290945       4.521743      0.2077946      0.4577242       1.201706      0.1097452      0.6677227E-01  0.2063497      0.4809774       1.000572       2.080914       6.186965    
+2050   12.03628       2.242200       1.766568       2.902871      0.6464166      0.3014330      0.4767450E-01  0.7924813E-01  0.1245476      0.4768165       1.489353       9.562546    
