@@ -1,0 +1,111 @@
+# <a href=http://climexp.knmi.nl/select.cgi?field=cmip6_pr_mon_mod_ssp245>climexp.knmi.nl/select.cgi?field=cmip6_pr_mon_mod_ssp245</a>
+# activity_id :: CMIP
+# ave_region :: lon=   27.188   29.062, lat=  -23.750  -22.500
+# averaging anomalies over region lon=   27.188   29.062, lat=  -23.750  -22.500
+# branch_method :: standard
+# cdi :: Climate Data Interface version ?? (http://mpimet.mpg.de/cdi)
+# cdo :: Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)
+# cmip6-ng :: \ncontact = cmip6-archive@env.ethz.ch\ndescription = ETH Zurich CMIP6 "next generation" (ng) archive.\ndisclaimer = This dataset is provided "as is", without warranty of any kind.\nfixes = delete latitude bounds; delete longitude bounds; delete time bounds, re-define time unit\ngit = 2020-01-17 18:00:44 git@git.iac.ethz.ch:cmip6-ng/cmip6-ng.git: master v1.5-18-g35c2064\nownership = The ownership of this dataset remains with the original provider\nunfixed_is
+# cmor_version :: 3.4.0
+# creation_date :: 2019-11-08T08:26:37Z
+# data_specs_version :: 01.00.30
+# experiment :: all-forcing simulation of the recent past
+# experiment_id :: historical
+# external_variables :: areacella
+# file :: CMIP6/monthly/pr/pr_mon_mod_ssp245_192_038.nc
+# forcing_index ::                1
+# frequency :: mon
+# further_info_url :: https://furtherinfo.es-doc.org/CMIP6.CSIRO-ARCCSS.ACCESS-CM2.historical.none.r1i1p1f1
+# grid :: native atmosphere N96 grid (144x192 latxlon)
+# grid_label :: gn
+# history ::  2024-10-18  7:05:29 bin/get_index CMIP6/monthly/pr/pr_mon_mod_ssp245_192_038.nc 28.529 28.556 -22.576 -22.430 dipole no year1 1999 year2 2050 minfac 30 nearest lsmask CMIP6/cmip6masks/lsm_cmip6_192x144_best.nc all nomissing standardunits cmip6_pr_mon_mod_ssp245_28.529-28.556E_-22.576--22.430N_1999-2050_n_su_+++\nThu Jun 24 16:42:57 2021: cdo -r -f nc4 -z zip ensmean pr_mon_one_ssp245_192_000.nc pr_mon_one_ssp245_192_001.nc pr_mon_one_ssp245_192_002.nc pr_mon_one_ssp245_192_003.nc pr_mon_one_ssp245_192_004.nc pr_mon_one_ssp245_192_005.nc pr_mon_one_ssp245_192_006.nc pr_mon_one_ssp245_192_007.nc pr_mon_one_ssp245_192_008.nc pr_mon_one_ssp245_192_009.nc pr_mon_one_ssp245_192_010.nc pr_mon_one_ssp245_192_011.nc pr_mon_one_ssp245_192_012.nc pr_mon_one_ssp245_192_013.nc pr_mon_one_ssp245_192_014.nc pr_mon_one_ssp245_192_015.nc pr_mon_one_ssp245_192_016.nc pr_mon_one_ssp245_192_017.nc pr_mon_one_ssp245_192_018.nc pr_mon_one_ssp245_192_019.nc pr_mon_one_ssp245_192_020.nc pr_mon_one_ssp245_192_021.nc pr_mon_one_ssp245_192_022.nc pr_mon_one_ssp245_192_023.nc pr_mon_one_ssp245_192_024.nc pr_mon_one_ssp245_192_025.nc pr_mon_one_ssp245_192_026.nc pr_mon_one_ssp245_192_027.nc pr_mon_one_ssp245_192_028.nc pr_mon_one_ssp245_192_029.nc pr_mon_one_ssp245_192_030.nc pr_mon_one_ssp245_192_031.nc pr_mon_one_ssp245_192_032.nc pr_mon_one_ssp245_192_033.nc pr_mon_one_ssp245_192_034.nc pr_mon_one_ssp245_192_035.nc pr_mon_one_ssp245_192_036.nc pr_mon_one_ssp245_192_ave.nc\nThu Jun 17 12:19:50 2021: cdo -r -f nc4 -z zip remapcon,r192x144 pr_mon_ACCESS-CM2_historical+ssp245_r1i1p1f1_CEmerged_ETH_native.nc /home/oldenbor/climexp_data/CMIP6/monthly/pr/pr_mon_ACCESS-CM2_ssp245_r1i1p1f1_192_000.nc\n2019-11-08T08:26:37Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 CMIP-6.2 and CF standards.
+# initialization_index ::                1
+# institution :: KNMI Climate Explorer and CSIRO (Commonwealth Scientific and Industrial Research Organisation, Aspendale, Victoria 3195, Australia), ARCCSS (Australian Research Council Centre of Excellence for Climate System Science)
+# institution_id :: CSIRO-ARCCSS
+# license :: CMIP6 model data produced by CSIRO is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (https://creativecommons.org/licenses/).  Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment.  Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file).  The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.
+# minimal_valid_fraction ::  30.00
+# mip_era :: CMIP6
+# nominal_resolution :: 250 km
+# notes :: Exp: CM2-historical; Local ID: bj594; Variable: pr (['fld_s05i216'])
+# operating on ACCESS-CM2 output prepared for CMIP6
+# original_file_hash_codes :: e0dc5bf88b45f171796a377b17d745e1cdca478c1fee795679e7cef4aa63702c
+# original_file_names :: /net/atmos/data/cmip6/historical/Amon/pr/ACCESS-CM2/r1i1p1f1/gn/pr_Amon_ACCESS-CM2_historical_r1i1p1f1_gn_185001-201412.nc
+# parent_activity_id :: CMIP
+# parent_experiment_id :: piControl
+# parent_mip_era :: CMIP6
+# parent_source_id :: ACCESS-CM2
+# parent_time_units :: days since 0950-01-01
+# parent_variant_label :: r1i1p1f1
+# physics_index ::                1
+# pr [mm/day] Precipitation
+# product :: model-output
+# realization_index ::                1
+# realm :: atmos
+# run_variant :: forcing: GHG, Oz, SA, Sl, Vl, BC, OC, (GHG = CO2, N2O, CH4, CFC11, CFC12, CFC113, HCFC22, HFC125, HFC134a)
+# scripturl01 :: http://climexp.knmi.nl/get_index.cgi?email=someone@somewhere&field=cmip6_pr_mon_mod_ssp245&gridpoints=false&intertype=nearest&lat1=-22.576&lat2=-22.430&lon1=28.529&lon2=28.556&masktype=all&standardunits=standardunits&year1=1999&year2=2050
+# source :: ACCESS-CM2 (2019): \naerosol: UKCA-GLOMAP-mode\natmos: MetUM-HadGEM3-GA7.1 (N96; 192 x 144 longitude/latitude; 85 levels; top level 85 km)\natmosChem: none\nland: CABLE2.5\nlandIce: none\nocean: ACCESS-OM2 (GFDL-MOM5, tripolar primarily 1deg; 360 x 300 longitude/latitude; 50 levels; top grid cell 0-10 m)\nocnBgchem: none\nseaIce: CICE5.1.2 (same grid a
+# source_id :: ACCESS-CM2
+# source_type :: AOGCM
+# sub_experiment :: none
+# sub_experiment_id :: none
+# table_id :: Amon
+# table_info :: Creation Date:(30 April 2019) MD5:e14f55f257cceafb2523e41244962371
+# title :: spatial statistic of ACCESS-CM2 output prepared for CMIP6
+# tracking_id :: hdl:21.14100/b4dd0f13-6073-4d10-b4e6-7d7a4401e37d
+# using year1  1999
+# using year2  2050
+# variable_id :: pr
+# variant_label :: r1i1p1f1
+# version :: v20191108
+1999   4.684796       3.537002       2.134523       1.380625       1.003233      0.3051183      0.2686074      0.2888848      0.4331308       1.337093       2.870874       3.981580    
+2000   3.892283       3.722321       1.841729       1.271370      0.7700798      0.3836659      0.2995946      0.3044801      0.7147237       1.486973       2.401177       3.859215    
+2001   4.393696       5.143517       3.048893       1.446585      0.7945488      0.4432142      0.2327877      0.2946800      0.6174417       1.215296       3.146279       3.711223    
+2002   3.994254       3.513651       2.212619       1.105103      0.7726918      0.4129679      0.3087191      0.1713927      0.3911490       1.132262       2.758143       4.194745    
+2003   4.296903       3.106766       2.140528       1.217108      0.8680105      0.6241961      0.3931404      0.3483973      0.4571587       1.042603       2.334337       4.038841    
+2004   3.760455       3.010235       1.660966      0.9644892      0.5491667      0.3783776      0.3244834      0.1384326      0.4493054       1.282026       2.685635       4.485633    
+2005   3.695423       3.714846       1.647330       1.181615      0.7636155      0.2912846      0.2933615      0.3871104      0.4603569       1.167090       2.701619       3.765122    
+2006   4.336039       4.236565       2.554651       1.003908      0.6850008      0.5199162      0.2465964      0.3550458      0.5095310       1.263181       2.762838       4.479592    
+2007   4.303346       3.733608       2.960800      0.9425870      0.6032874      0.3675653      0.2735834      0.2676492      0.3301708       1.119695       2.937099       4.398266    
+2008   4.070886       3.222261       1.934680       1.113953      0.6058993      0.4552352      0.2728519      0.1739934      0.4176618       1.144406       2.873320       4.388620    
+2009   3.979261       3.167130       1.924773       1.146622       1.075486      0.4333805      0.3161832      0.2895976      0.4299165       1.055708       2.681937       3.985125    
+2010   4.452164       3.867695       2.050382      0.9231115      0.8282050      0.4459296      0.2046728      0.2393196      0.3174759       1.038444       2.939654       4.553564    
+2011   4.530702       3.638292       1.877670       1.047376      0.7100711      0.3752822      0.2817399      0.2671351      0.5005572       1.213869       2.905245       4.017103    
+2012   4.243893       3.185960       2.225070       1.315283      0.6157311      0.2975501      0.3152062      0.2813471      0.4859304       1.103406       2.668842       3.823438    
+2013   4.465999       2.523736       1.714643      0.9294938      0.5829427      0.2778872      0.3430199      0.2517812      0.4263974       1.194847       3.087458       3.955060    
+2014   4.110811       2.760573       2.277706       1.030883      0.7318773      0.3722235      0.2812582      0.2509019      0.3231162       1.269248       3.322333       4.352757    
+2015   4.732760       3.698056       1.974991      0.8110632      0.6079060      0.4909516      0.2905955      0.2336252      0.3583156       1.088736       3.192566       3.801167    
+2016   3.982996       2.780178       2.001098       1.095744      0.5938819      0.3447371      0.1759907      0.1710686      0.4226631       1.090321       2.891190       4.321320    
+2017   4.521642       3.352692       1.969737       1.226640      0.7920828      0.5918775      0.3091882      0.2184880      0.3307863       1.135225       2.533443       4.368699    
+2018   4.115089       2.772756       1.916462      0.8567674      0.6158395      0.3159358      0.2779990      0.2037895      0.4443794       1.104704       2.672119       4.021195    
+2019   4.623913       3.088823       1.693825      0.4812395      0.6252060      0.4869530      0.2215041      0.2566432      0.5739158       1.308041       2.738057       4.115984    
+2020   4.763624       3.159642       1.927032      0.6576275      0.6720621      0.4661661      0.3487397      0.2739957      0.5022045      0.9898679       2.918810       4.531329    
+2021   4.325125       3.538596       2.599633      0.9407391      0.7735803      0.5438512      0.2392116      0.2722681      0.3386557       1.059768       2.897058       4.057435    
+2022   4.301918       3.167218       2.132293       1.326627      0.6572536      0.5370148      0.2801574      0.2250770      0.5844326      0.9394158       2.860598       4.652303    
+2023   4.572030       3.396414       2.152813       1.020187      0.8446810      0.4621896      0.2535490      0.3203158      0.3028322       1.129214       2.609253       4.343550    
+2024   4.572042       3.885775       2.280927       1.013067      0.7587656      0.3554803      0.1960136      0.1805919      0.3670628       1.191445       2.778402       4.963912    
+2025   4.623530       4.324811       1.940720      0.9562792      0.7559112      0.2047439      0.2305466      0.4528364      0.3367171       1.070722       2.980231       4.087627    
+2026   4.411194       3.496780       2.065323      0.8045174      0.6602095      0.4423188      0.2179346      0.2991090      0.4196691      0.9878597       3.070405       4.306041    
+2027   3.825440       3.610142       2.279473       1.003638      0.7244719      0.3318106      0.2272058      0.2755676      0.3849210       1.140485       2.727253       3.422537    
+2028   4.264951       3.292989       2.172361      0.7929749      0.7936514      0.4893482      0.3637061      0.3662793      0.4987210       1.258823       2.589513       4.308658    
+2029   4.423533       4.086686       2.018227      0.8882210      0.6633319      0.3364047      0.2384084      0.2004832      0.2317013      0.9963751       3.125962       4.152325    
+2030   3.106578       2.970843       2.037901       1.116171      0.6763745      0.4208845      0.3286769      0.2784615      0.2631089       1.192192       2.524191       4.455296    
+2031   4.547416       3.635683       1.997529       1.143207      0.5007346      0.3168178      0.2304718      0.3547832      0.3097894       1.041030       2.849181       4.034517    
+2032   3.493337       3.589074       1.739038      0.9607400      0.5182704      0.2497580      0.2782675      0.1821412      0.3884673       1.260773       2.697106       3.913158    
+2033   4.286823       3.158479       1.755773       1.047846      0.6384367      0.5539533      0.2145262      0.1586720      0.4347003       1.015888       2.642457       4.473833    
+2034   4.180005       3.719954       2.167818      0.8598314      0.6749128      0.4363695      0.2991287      0.2967972      0.3591596      0.8497347       2.412353       3.625484    
+2035   4.833303       3.514397       2.420773       1.413455      0.6936100      0.4390439      0.2875603      0.2231730      0.3728188      0.9787794       2.826409       4.401196    
+2036   5.308891       4.020825       1.770263      0.7714005      0.6470873      0.4127053      0.3615868      0.2734810      0.4600346       1.155752       2.231663       4.082808    
+2037   4.420154       3.656273       1.925896       1.275258      0.6579413      0.4771403      0.1712351      0.2358272      0.4541341       1.340767       2.481917       4.436897    
+2038   4.919491       4.010069       1.500608       1.321425      0.4372635      0.3945597      0.2988570      0.1882931      0.3291269       1.159596       2.419366       4.100194    
+2039   4.384280       3.999684       1.889759      0.9031922      0.6748595      0.3119853      0.2030446      0.2200826      0.4524780      0.9079118       2.564543       4.251519    
+2040   4.717703       3.417523       2.285063      0.8122271      0.7123078      0.4332124      0.2833927      0.2727573      0.3809128       1.309107       2.918555       4.282850    
+2041   4.292941       3.708029       2.082601       1.265538      0.4842157      0.4320530      0.2946235      0.1360541      0.3704514      0.7418358       2.175649       4.342853    
+2042   4.553229       2.743309       2.080058       1.121816      0.6654045      0.3645788      0.1790085      0.2787533      0.3313196       1.176435       2.499800       4.253794    
+2043   3.948621       3.448246       1.940374      0.7776226      0.5660596      0.2931152      0.1789728      0.2715526      0.3022515       1.120682       2.875667       3.915763    
+2044   4.075353       2.608796       1.489470      0.8655124      0.6620896      0.4157397      0.1838382      0.2760202      0.2838900      0.8455807       3.011529       5.117519    
+2045   4.419802       3.588746       1.824880       1.006814      0.7281774      0.4771917      0.2239967      0.2236070      0.2745708      0.9693222       2.853834       3.585034    
+2046   5.403702       4.188365       1.866078       1.210238      0.9237254      0.5494921      0.2512341      0.2179615      0.3456176      0.8704602       2.628069       3.724960    
+2047   3.808570       4.107109       1.930352      0.9117854      0.4168935      0.3014109      0.3139386      0.1347626      0.3409705      0.9605209       3.013936       4.807533    
+2048   4.580874       3.105322       2.310354      0.9578346      0.5793419      0.3595086      0.2834740      0.1840094      0.2906261      0.9303792       2.556941       3.841100    
+2049   4.531410       4.066195       1.753619      0.7932526      0.5570684      0.4387293      0.3105102      0.1652025      0.3930654      0.7302824       2.668242       3.387129    
+2050   4.605367       3.405290       1.903876       1.023217      0.6284025      0.4154108      0.1810896      0.1919228      0.3358956       1.052908       2.301934       5.010860    

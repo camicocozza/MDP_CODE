@@ -1,0 +1,108 @@
+# <a href=http://climexp.knmi.nl/select.cgi?field=cmip6_pr_mon_mod_ssp245>climexp.knmi.nl/select.cgi?field=cmip6_pr_mon_mod_ssp245</a>
+# activity_id :: CMIP
+# ave_region :: lon=   27.188   29.062, lat=  -23.750  -22.500
+# averaging anomalies over region lon=   27.188   29.062, lat=  -23.750  -22.500
+# branch_method :: standard
+# cdi :: Climate Data Interface version ?? (http://mpimet.mpg.de/cdi)
+# cdo :: Climate Data Operators version 1.9.3 (http://mpimet.mpg.de/cdo)
+# cmip6-ng :: \ncontact = cmip6-archive@env.ethz.ch\ndescription = ETH Zurich CMIP6 "next generation" (ng) archive.\ndisclaimer = This dataset is provided "as is", without warranty of any kind.\nfixes = delete latitude bounds; delete longitude bounds; delete time bounds\ngit = 2019-12-17 18:26:09 git@git.iac.ethz.ch:cmip6-ng/cmip6-ng.git: master v1.5-6-g3802cf0\nownership = The ownership of this dataset remains with the original provider\nunfixed_is
+# cmor_version :: 3.3.2
+# creation_date :: 2019-06-25T17:33:22Z
+# data_specs_version :: 01.00.28
+# experiment :: all-forcing simulation of the recent past
+# experiment_id :: historical
+# external_variables :: areacella
+# file :: CMIP6/monthly/pr/pr_mon_mod_ssp245_192_029.nc
+# forcing_index ::                2
+# frequency :: mon
+# further_info_url :: https://furtherinfo.es-doc.org/CMIP6.MIROC.MIROC-ES2L.historical.none.r1i1p1f2
+# grid :: native atmosphere T42 Gaussian grid
+# grid_label :: gn
+# history ::  2024-10-18  7:05:12 bin/get_index CMIP6/monthly/pr/pr_mon_mod_ssp245_192_029.nc 28.529 28.556 -22.576 -22.430 dipole no year1 1999 year2 2050 minfac 30 nearest lsmask CMIP6/cmip6masks/lsm_cmip6_192x144_best.nc all nomissing standardunits cmip6_pr_mon_mod_ssp245_28.529-28.556E_-22.576--22.430N_1999-2050_n_su_+++\nFri Jun 18 12:16:55 2021: cdo -r -f nc4 -z zip remapcon,r192x144 pr_mon_MIROC-ES2L_historical+ssp245_r1i1p1f2_CEmerged_ETH_native.nc /home/oldenbor/climexp_data/CMIP6/monthly/pr/pr_mon_MIROC-ES2L-f2_ssp245_r1i1p1f2_192_000.nc\n2019-06-25T17:33:22Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 CMIP-6.2 and CF standards.
+# initialization_index ::                1
+# institution :: KNMI Climate Explorer and JAMSTEC (Japan Agency for Marine-Earth Science and Technology, Kanagawa 236-0001, Japan), AORI (Atmosphere and Ocean Research Institute, The University of Tokyo, Chiba 277-8564, Japan), NIES (National Institute for Environmental Studies, Ibaraki 305-8506, Japan), and R-CCS (RIKEN Center for Computational Science, Hyogo 650-0047, Japan)
+# institution_id :: MIROC
+# license :: CMIP6 model data produced by MIROC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses/). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file). The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.
+# minimal_valid_fraction ::  30.00
+# mip_era :: CMIP6
+# nominal_resolution :: 500 km
+# operating on MIROC-ES2L output prepared for CMIP6
+# original_file_hash_codes :: 6585646b8bf1ddaa8d5b6b5c89aa5c5c6ce013c84add763072f8b8b983b1f6de
+# original_file_names :: /net/atmos/data/cmip6/historical/Amon/pr/MIROC-ES2L/r1i1p1f2/gn/pr_Amon_MIROC-ES2L_historical_r1i1p1f2_gn_185001-201412.nc
+# parent_activity_id :: CMIP
+# parent_experiment_id :: piControl
+# parent_mip_era :: CMIP6
+# parent_source_id :: MIROC-ES2L
+# parent_time_units :: days since 1850-1-1
+# parent_variant_label :: r1i1p1f2
+# physics_index ::                1
+# pr [mm/day] Precipitation
+# product :: model-output
+# realization_index ::                1
+# realm :: atmos
+# scripturl01 :: http://climexp.knmi.nl/get_index.cgi?email=someone@somewhere&field=cmip6_pr_mon_mod_ssp245&gridpoints=false&intertype=nearest&lat1=-22.576&lat2=-22.430&lon1=28.529&lon2=28.556&masktype=all&standardunits=standardunits&year1=1999&year2=2050
+# source :: MIROC-ES2L (2018): \naerosol: SPRINTARS6.0\natmos: CCSR AGCM (T42; 128 x 64 longitude/latitude; 40 levels; top level 3 hPa)\natmosChem: none\nland: MATSIRO6.0+VISIT-e ver.1.0\nlandIce: none\nocean: COCO4.9 (tripolar primarily 1deg; 360 x 256 longitude/latitude; 63 levels; top grid cell 0-2 m)\nocnBgchem: OECO ver.2.0; NPZD-type with C/N/P/Fe/O cycles\nseaIce:
+# source_id :: MIROC-ES2L
+# source_type :: AOGCM AER BGC
+# sub_experiment :: none
+# sub_experiment_id :: none
+# table_id :: Amon
+# table_info :: Creation Date:(06 November 2018) MD5:0728c79344e0f262bb76e4f9ff0d9afc
+# title :: spatial statistic of MIROC-ES2L output prepared for CMIP6
+# tracking_id :: hdl:21.14100/0198735e-c851-410e-b215-6187f0f70981
+# using year1  1999
+# using year2  2050
+# variable_id :: pr
+# variant_label :: r1i1p1f2
+1999   8.691612       3.858493       4.725089       2.546106       1.356897      0.4213921      0.5377598       2.010825      0.9460231       4.778675       7.396736       6.586991    
+2000   10.39228       8.993183       5.089642       4.734114       3.016092      0.6501306       2.652956      0.5222557       3.630847       6.202340       3.286771       4.208474    
+2001   3.714872       5.787531       3.636733       8.275023       2.975303       1.420168       1.622384       3.634293       3.454452       2.495894       4.161885       2.372499    
+2002   3.260458       9.446304       4.175017       2.104293      0.8650033       1.182748      0.7789488      0.6301848       1.499970       4.198187       7.286783       8.401139    
+2003   8.489361       10.80713       6.570946       4.543524      0.7121559       2.024700       1.628830       1.865572       4.516171       3.072832       2.275789       7.682553    
+2004   11.35683       3.002184       8.697780       2.398724      0.8359688      0.5745927      0.9932204      0.9283075       1.672039       3.437534       4.148862       5.428051    
+2005   3.555814       4.713519       3.561247       1.549700      0.5155044      0.1958865      0.2190450       1.684908      0.4095781       3.062097       10.58277       2.922005    
+2006   11.79937       8.157506       4.425092       3.326281       2.376561       1.066762       2.499114       1.657242      0.7071337       2.659076       7.957372       13.75290    
+2007   12.68710       8.641417       9.275636       2.809955       1.510162      0.7857885      0.9011785       1.443352      0.6104608       1.540812       7.871600       7.668290    
+2008   5.129428       16.72532       8.070389       4.421504       2.277978       1.275235      0.5285563      0.7091959       2.969548       3.864992       8.463787       7.540557    
+2009   5.329964       8.798000       4.983899       1.819948       5.937429      0.6396869       1.325682       2.698914       1.265061       3.757851       5.411006       4.993386    
+2010   3.850099       6.153830       2.656379      0.5787284      0.9674487      0.8904206      0.9901853       1.384420       1.395050       3.379597       3.194447       3.798414    
+2011   10.37260       11.72809      0.9896687       1.860150       2.139777       1.169923      0.7235882       1.069427      0.8640338       2.232043       3.171550       3.388847    
+2012   5.054716       5.431017       3.029549       3.416298      0.8837301      0.4740839       1.981924      0.4692453       2.824206       5.403451       4.065972       6.389215    
+2013   8.236009       5.348859       8.885602       3.065712       1.142615      0.7520683      0.8654779       1.759924       1.344372       2.062692       7.696025       4.348404    
+2014   8.045015       4.296519       3.072043      0.9759594       1.413718       1.262859       2.050500      0.8063520       1.957804      0.8037532       6.977825       4.953842    
+2015   5.448592       4.277666       2.472546       2.353884       1.362138      0.9856893      0.1656841       1.042703       1.433728       4.486486       3.855976       8.819803    
+2016   9.312369       7.837480       6.734270       5.018801      0.6017610      0.4911795      0.7674970       1.728076       1.265974       2.777719       4.194365       8.170720    
+2017   3.741971       6.899632       3.550109       3.165477       1.668773      0.7087107      0.8935714       1.440988       2.083751       3.700029       6.246524       9.540142    
+2018   5.589584       5.814228       3.841816       6.943135       2.331313      0.3696474       1.756076       1.725700       2.585267       3.777939       3.247947       3.685779    
+2019   2.802500       5.764928       2.629130      0.4966049       1.410396      0.8644210       1.160659       1.290760       3.215739       4.029114       4.765069       5.975799    
+2020   4.238491       6.260106       2.915610       1.356005      0.4535953      0.4116596       1.460534       1.045604       1.443196       3.353195       4.245670       6.261657    
+2021   7.332774       8.154403       1.808004       1.204976       3.910782      0.6959760      0.1038124       2.361610       1.087220       1.020174       5.083965       5.489500    
+2022   5.789239       1.612615       11.35795       5.023735       1.036590       2.343760      0.4040442       3.117179       2.657619       2.292372       4.499975       4.032712    
+2023   5.882710       3.380955       2.104100       1.693756       3.151393      0.6848963      0.2203199      0.2175301      0.6360158       1.242136       5.712918       4.791104    
+2024   4.273790       5.953390       3.609629       1.735784       1.503383       1.087741       1.475169      0.3897447E-01   2.301017       4.248786       4.027664       6.935590    
+2025   7.559333       7.164639       3.828635       5.170364       3.053914      0.4574151       1.310610       1.589779       2.488595       1.551651       3.702463       5.517717    
+2026   10.12062       5.198551       3.901859       4.108367       1.116863      0.3471493      0.5098245       1.513817       3.304603       1.502640       3.784042       5.638892    
+2027   7.693535       11.56008       4.024566       3.700747       2.453459      0.5377074      0.4652894      0.8589720       1.515854       5.953506       3.083190       5.807689    
+2028   5.517005       1.424234       3.260874       2.399170       2.835552       1.633510      0.5018762       1.221188       2.089139       4.881670       3.281150       5.749779    
+2029   3.169492       2.949295       2.705364       3.182497      0.6388379      0.1033421      0.9030147       1.316215       1.021506       5.037635       5.843912       9.420593    
+2030   9.416298       10.08475       2.265466       3.684524       1.878754       1.851265       1.365147       1.169707       1.117859       2.959523       4.004768       4.937706    
+2031   6.336672       8.994013       6.294763       1.842861       1.070427      0.2673945      0.9978175       4.159860       1.337640       3.264783       4.813260       7.084342    
+2032   8.598884       10.52454       3.899009       2.932570       1.772239      0.3151776      0.7412089       2.144823       4.375981       2.671307       2.787325       3.215161    
+2033   8.153342       2.638785       1.670855       2.273967       1.453453       2.318290      0.1790110       1.303984       1.317919       3.042951       3.820047       3.575732    
+2034   8.821717       6.725339       8.622559       3.415087       2.438766      0.2119488       2.090687      0.6639808      0.4807978       3.074865       5.547394       4.793563    
+2035   11.03855       2.662052       10.31030       1.845258       1.348568       1.905199      0.6357057       1.127118       3.033686       2.451880       4.627427       7.903958    
+2036   6.026214       12.05238       5.191042       3.355707       2.182880      0.4319290       1.527877       1.715025       1.377097       1.606181       4.883072       4.695333    
+2037   6.311227       16.38759       7.537704       1.901325       2.087102      0.9834216       2.390443       2.624293       1.340590       2.950432       1.999288       6.183780    
+2038   5.435236       3.809824       2.069215       1.987974       2.195205       1.262133       1.559381      0.6592866      0.2106849       5.187576       5.189283       5.351030    
+2039   5.372864       7.541690       3.363014       3.276245       1.790261      0.1785810      0.2249017       2.408010      0.7525411       3.846848       8.876801       7.840210    
+2040   8.711658       3.835804       3.906683       4.055974      0.9720587      0.8412873       1.158516       1.008715      0.9339181       5.210297       2.653888       5.897376    
+2041   4.160254       4.421416       9.849390       4.927907       2.531452      0.6509468      0.5153713      0.5019363       2.599597       2.586560       4.705859       5.460064    
+2042   6.928432       6.185535       3.155154       2.357872       1.822399      0.9866086E-01   1.147343       1.977531       1.039758       5.621421       2.879975       8.088524    
+2043   7.115070       3.066664       4.696391       2.817829       2.240806      0.5665126      0.7560890       3.395727       1.285945       4.900954       11.46320       7.838264    
+2044   4.541575       5.499207       6.571393       5.327280      0.5786229      0.7512152       1.172046       1.905184      0.6435367       2.898700       8.355887       8.246611    
+2045   12.27281       3.305376       2.374414       4.822030       5.063374      0.5242479       1.560500       2.623261       3.786121       2.910257       3.265577       7.031696    
+2046   5.679964       14.19435       4.715367       7.866320       1.768882       1.463156       1.160632       1.985445      0.8430804       2.538755       3.135803       4.845226    
+2047   7.700268       5.380538       4.436557       3.487728       1.324611      0.9556076      0.8814463      0.2939392      0.7268600       2.593711       4.139960       7.042894    
+2048   7.773878       7.628448       7.596118       4.599192       1.934919      0.8085132       2.054540      0.9836117       2.725327       3.831580       4.081462       4.422600    
+2049   10.59297       1.994752       2.990817       3.871453       1.841293      0.2117389      0.9383790      0.6124504       1.467776       2.779460       3.770183       2.955867    
+2050   6.968438       8.852728       2.957428       3.391160      0.8987116       1.060091      0.9234212      0.6003541       2.888713       2.744580       4.277510       1.773967    
